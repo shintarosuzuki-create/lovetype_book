@@ -225,13 +225,6 @@ select:focus {
   border-color: var(--pink);
 }
 
-.type-note {
-  margin: -8px 0 0;
-  font-size: 13px;
-  color: var(--muted);
-  min-height: 1.75em;
-}
-
 /* ---------- ボタン ---------- */
 
 .btn {

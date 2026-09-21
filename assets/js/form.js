@@ -3,7 +3,6 @@
   const form = document.getElementById('license-form');
   const nameInput = document.getElementById('name');
   const typeSelect = document.getElementById('type');
-  const note = document.getElementById('type-note');
 
   // 16タイプをセレクトに流し込む
   for (const t of LOVE_TYPES) {
@@ -12,11 +11,6 @@
     opt.textContent = `${t.nickname}（${t.code}）`;
     typeSelect.appendChild(opt);
   }
-
-  typeSelect.addEventListener('change', () => {
-    const t = LOVE_TYPE_MAP[typeSelect.value];
-    note.textContent = t ? `💗 ${t.catch}` : '';
-  });
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
