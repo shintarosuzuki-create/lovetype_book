@@ -342,25 +342,17 @@ select:focus {
 .share-btn svg {
   width: 22px;
   height: 22px;
-  fill: currentColor;
 }
 
 .share-btn--x { background: #000; }
 .share-btn--line { background: #06c755; }
-.share-btn--facebook { background: #1877f2; }
+
+.share-btn--instagram {
+  background: linear-gradient(45deg, #f09433 0%, #dc2743 45%, #bc1888 100%);
+}
 
 .stack > * + * {
   margin-top: 10px;
-}
-
-.caption-box {
-  margin-top: 12px;
-  background: var(--pink-pale);
-  border-radius: 12px;
-  padding: 12px 14px;
-  font-size: 13px;
-  white-space: pre-wrap;
-  word-break: break-word;
 }
 
 .toast {

@@ -56,27 +56,12 @@
     HASHTAGS.map((h) => `#${h}`).join(' '),
   ].join('\n');
 
-  $('headline').innerHTML = `あなたは<span class="marker">${type.nickname}</span>`;
-  $('subline').textContent = type.catch;
-  $('caption').textContent = caption;
-
   // ---- 共有リンク（テキスト + サイトURL） ----
   const shareText = `${caption}\n`;
   $('share-x').href =
     `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(SITE_URL)}`;
   $('share-line').href =
     `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(shareText)}`;
-  $('share-fb').href =
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL)}`;
-
-  $('copy-caption').addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(`${caption}\n${SITE_URL}`);
-      showToast('投稿文をコピーしました');
-    } catch {
-      showToast('コピーできませんでした');
-    }
-  });
 
   // ---- 免許証を描画 ----
   const canvas = document.createElement('canvas');
@@ -103,17 +88,38 @@
 
       // 画像そのものを共有できる端末では、それを最優先の導線にする
       const file = new File([blob], fileName, { type: 'image/png' });
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      const canShareImage = Boolean(navigator.canShare && navigator.canShare({ files: [file] }));
+
+      async function shareImage() {
+        await navigator.share({ files: [file], text: `${caption}\n${SITE_URL}` });
+      }
+
+      if (canShareImage) {
         const btn = $('share-image');
         btn.hidden = false;
         btn.addEventListener('click', async () => {
           try {
-            await navigator.share({ files: [file], text: `${caption}\n${SITE_URL}` });
+            await shareImage();
           } catch (err) {
             if (err && err.name !== 'AbortError') showToast('シェアできませんでした');
           }
         });
       }
+
+      // Instagram はWeb上から投稿を作るURLが提供されていないため、
+      // 共有シート（Instagramが選べる）か、保存してアプリで投稿する導線にする。
+      $('share-ig').addEventListener('click', async () => {
+        if (canShareImage) {
+          try {
+            await shareImage();
+            return;
+          } catch (err) {
+            if (err && err.name === 'AbortError') return;
+          }
+        }
+        download.click(); // 画像を保存してから、Instagramで投稿してもらう
+        showToast('画像を保存しました。Instagramで投稿してください');
+      });
     })
     .catch((err) => {
       console.error(err);

@@ -21,8 +21,16 @@ const BASE_H = 1920;
 const LAYOUT = {
   /** 氏名欄（空欄なので、そのまま中央に書き込む） */
   name: { x: 145, y: 905, w: 520, h: 50, size: 36 },
-  /** 交付日欄（「2026年　月　日交付」が印刷済みなので、一度塗りつぶしてから書き直す） */
-  date: { x: 669, y: 907, w: 339, h: 46, size: 26, clear: '#ffffff' },
+  /**
+   * 交付日欄。「2026年　月　日交付」が印刷済みなので、一度塗りつぶしてから書き直す。
+   * clear は枠線と角丸に絶対に触れないよう、セルより内側に取ること。
+   * この枠の角丸は y=909 の時点で x=995 まで内側に入るので、右端は 992 で止めている。
+   * color を省略すると、塗りつぶし範囲の左上から下地の色を読み取って使う。
+   */
+  date: {
+    x: 669, y: 907, w: 339, h: 46, size: 26,
+    clear: { x: 670, y: 910, w: 322, h: 41 },
+  },
 };
 
 /** タイプごとに枠位置が違う場合だけ、ここに差分を書く（例: FCPE: { name: { y: 910 } }）。 */
@@ -131,7 +139,26 @@ function layoutFor(code) {
   };
 }
 
-/** 枠の中央にテキストを1行入れる。box.clear があれば先に塗りつぶす。 */
+/**
+ * 塗りつぶしに使う色を決める。
+ * color 指定があればそれを、無ければ塗りつぶし範囲の左上から下地の色を読み取る。
+ * （差し替える画像の下地が白以外でも自動で追従させるため）
+ */
+function resolveClearColor(ctx, clear, scale) {
+  if (clear.color) return clear.color;
+  try {
+    const d = ctx.getImageData(
+      Math.round((clear.x + 2) * scale),
+      Math.round((clear.y + 2) * scale),
+      1, 1,
+    ).data;
+    return `rgb(${d[0]},${d[1]},${d[2]})`;
+  } catch {
+    return '#ffffff';
+  }
+}
+
+/** 枠の中央にテキストを1行入れる。box.clear があれば先にその範囲だけ塗りつぶす。 */
 function fillBox(ctx, box, text, scale) {
   const x = box.x * scale;
   const y = box.y * scale;
@@ -139,8 +166,9 @@ function fillBox(ctx, box, text, scale) {
   const h = box.h * scale;
 
   if (box.clear) {
-    ctx.fillStyle = box.clear;
-    ctx.fillRect(x, y, w, h);
+    const c = box.clear;
+    ctx.fillStyle = resolveClearColor(ctx, c, scale);
+    ctx.fillRect(c.x * scale, c.y * scale, c.w * scale, c.h * scale);
   }
 
   ctx.fillStyle = PALETTE.ink;
