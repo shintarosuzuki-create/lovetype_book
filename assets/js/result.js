@@ -78,24 +78,12 @@
       download.href = url;
       download.download = fileName;
 
-      // 画像そのものを共有できる端末では、それを最優先の導線にする
+      // 画像ファイルごと共有できる端末か（Instagramボタンの挙動を切り替える）
       const file = new File([blob], fileName, { type: 'image/png' });
       const canShareImage = Boolean(navigator.canShare && navigator.canShare({ files: [file] }));
 
       async function shareImage() {
         await navigator.share({ files: [file], text: `${caption}\n${SITE_URL}` });
-      }
-
-      if (canShareImage) {
-        const btn = $('share-image');
-        btn.hidden = false;
-        btn.addEventListener('click', async () => {
-          try {
-            await shareImage();
-          } catch (err) {
-            if (err && err.name !== 'AbortError') showToast('シェアできませんでした');
-          }
-        });
       }
 
       // Instagram はWeb上から投稿を作るURLが提供されていないため、
