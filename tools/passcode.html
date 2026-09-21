@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>合言葉ハッシュ生成ツール</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="hero__badge">運営用ツール</span>
+    <h1 class="hero__title">合言葉ハッシュ生成</h1>
+    <p class="hero__lead">
+      新しい合言葉を入れると、<code>assets/js/gate.js</code> に貼る1行が出ます。
+    </p>
+  </header>
+
+  <section class="panel">
+    <div class="field">
+      <label for="word">新しい合言葉</label>
+      <input type="text" id="word" autocomplete="off" autocapitalize="off"
+             spellcheck="false" placeholder="例：こいのきょうかしょ">
+    </div>
+
+    <p class="gate__lead">
+      全角・半角、大文字・小文字、前後の空白の違いは自動で吸収されます。
+    </p>
+
+    <div class="field">
+      <label for="out">gate.js に貼る1行</label>
+      <textarea id="out" rows="4" readonly
+        style="width:100%;font:inherit;font-size:13px;padding:13px 14px;border:2px solid var(--pink-soft);border-radius:12px;background:#fffafc;color:var(--ink);resize:vertical;word-break:break-all;"></textarea>
+    </div>
+
+    <button type="button" class="btn btn--ghost" id="copy">この行をコピー 📋</button>
+  </section>
+
+  <section class="panel">
+    <h2 class="panel__title">使い方</h2>
+    <ol style="padding-left:1.2em;font-size:14px;">
+      <li>上の欄に、書籍に載せる合言葉を入力する</li>
+      <li>出てきた1行をコピーする</li>
+      <li><code>assets/js/gate.js</code> の <code>PASSCODE_SHA256</code> の行を、その1行で置き換える</li>
+      <li>保存してデプロイする</li>
+    </ol>
+    <p class="gate__lead" style="margin-top:14px">
+      合言葉を変えると、すでに解除済みの端末でも再入力が必要になります。<br>
+      このツールは運営用なので、公開前に <code>tools/</code> ごと消しても構いません。
+    </p>
+  </section>
+
+  <p class="footer"><a href="../index.html">← 特典ページへ</a></p>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  const word = document.getElementById('word');
+  const out = document.getElementById('out');
+  const toast = document.getElementById('toast');
+
+  // gate.js の normalize() と同じ処理にしておくこと
+  const normalize = (v) => (v || '').normalize('NFKC').trim().toLowerCase().replace(/\s+/g, '');
+
+  async function sha256Hex(text) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  async function update() {
+    const normalized = normalize(word.value);
+    if (!normalized) {
+      out.value = '';
+      return;
+    }
+    if (!crypto.subtle) {
+      out.value = 'この環境では計算できません。https のURLか localhost で開いてください。';
+      return;
+    }
+    const hash = await sha256Hex(normalized);
+    out.value = `  const PASSCODE_SHA256 = '${hash}';`;
+  }
+
+  word.addEventListener('input', update);
+
+  document.getElementById('copy').addEventListener('click', async () => {
+    if (!out.value) return;
+    try {
+      await navigator.clipboard.writeText(out.value);
+      toast.textContent = 'コピーしました';
+    } catch {
+      toast.textContent = 'コピーできませんでした';
+    }
+    toast.classList.add('is-visible');
+    setTimeout(() => toast.classList.remove('is-visible'), 1800);
+  });
+})();
+</script>
+</body>
+</html>

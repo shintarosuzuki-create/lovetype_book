@@ -115,6 +115,22 @@ body {
   background: var(--pink);
 }
 
+/* ---------- 合言葉ゲート ---------- */
+
+.gate__lead {
+  margin: -6px 0 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.gate__error {
+  margin: -8px 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #c0392b;
+  min-height: 1.75em;
+}
+
 /* ---------- 見本画像 ---------- */
 
 .preview {
