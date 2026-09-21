@@ -31,6 +31,17 @@ GitHub Pages などにそのまま置けば動きます。
 ファイル名・画像サイズ・位置調整のしかたは
 [`assets/licenses/README.md`](assets/licenses/README.md) にまとめてあります。
 
+## 取扱説明書（PDF）の差し替え
+
+**PDFは `assets/manuals/<タイプコード>.pdf` に置くだけで切り替わります。**
+16タイプすべて配置済みです。
+
+利用者が保存したときのファイル名は、サイト側で
+`書籍予約特典_◯◯の取扱説明書.pdf`（◯◯はタイプ名）に自動で付け替わるので、
+置くファイルの名前はタイプコードのままで構いません。
+
+対応表は [`assets/manuals/README.md`](assets/manuals/README.md) にあります。
+
 ## 合言葉ゲート（限定配布にする仕組み）
 
 公式LINEで配布した合言葉を入力しないと、免許証を発行できないようにしています。
@@ -93,6 +104,8 @@ assets/
   js/result.js              結果ページの制御・シェア処理
   licenses/<CODE>.png       タイプごとの完成画像 ← ここに差し替える
   licenses/README.md        差し替え手順
+  manuals/<CODE>.pdf        タイプごとの取扱説明書PDF
+  manuals/README.md         ファイル名の対応表
   img/sample-license.png    OGP用の見本画像
 ```
 
@@ -100,13 +113,14 @@ assets/
 
 | ボタン | 挙動 |
 | --- | --- |
-| 画像つきでシェア | Web Share API で画像ファイルごと共有。対応端末（主にスマホ）でだけ表示されます |
-| 画像を保存する | PNG をダウンロード |
+| 取扱説明書をダウンロードする | タイプごとのPDFを、日本語のファイル名に付け替えて保存 |
+| 画像を保存する | 免許証のPNGをダウンロード |
 | X / LINE | 投稿文とサイトURLを渡して各シェア画面を開く（画像は手動添付） |
 | Instagram | 共有シートが使える端末ではそれを開く。使えない場合は画像を保存して、アプリで投稿してもらう |
 
 X と LINE のシェア URL には画像を添付できない仕様のため、
-画像も一緒に流したい場合は「画像つきでシェア」か、保存してから手動添付という導線になります。
+画像も一緒に流したい場合は Instagram ボタン（共有シート）か、
+保存してから手動添付という導線になります。
 
 **Instagram について**：Instagram には X や LINE のような「投稿画面を開くURL」が公開されていません。
 Web から投稿内容を用意して渡す方法が存在しないため、
@@ -128,6 +142,8 @@ python3 -m http.server 8000
 | --- | --- |
 | 合言葉を変える | `assets/js/gate.js` の `PASSCODE_SHA256` |
 | 免許証のデザインを差し替える | `assets/licenses/<CODE>.png` を置く |
+| 取扱説明書を差し替える | `assets/manuals/<CODE>.pdf` を置く |
+| ダウンロード時のファイル名を変える | `assets/js/result.js` の `link.download` |
 | 氏名・交付日の位置を直す | `assets/js/license.js` の `LAYOUT` / `LAYOUT_OVERRIDES` |
 | タイプ名・キャッチコピーを直す | `assets/js/types.js` |
 | シェア文・ハッシュタグを変える | `assets/js/result.js` の `HASHTAGS` と `caption` |

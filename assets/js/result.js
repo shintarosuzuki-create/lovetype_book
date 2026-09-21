@@ -55,6 +55,26 @@
   $('share-line').href =
     `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(shareText)}`;
 
+  // ---- 取扱説明書（タイプごとのPDF） ----
+  // ファイルは assets/manuals/<CODE>.pdf に置く。
+  // 保存時のファイル名は download 属性で「書籍予約特典_◯◯の取扱説明書.pdf」に差し替える。
+  (async () => {
+    const link = $('manual-link');
+    const href = `assets/manuals/${type.code}.pdf`;
+    link.href = href;
+    link.download = `書籍予約特典_${type.nickname}の取扱説明書.pdf`;
+
+    let exists = false;
+    try {
+      const res = await fetch(href, { method: 'HEAD' });
+      exists = res.ok;
+    } catch {
+      exists = false; // 取得できないときは未配置として扱う
+    }
+    link.hidden = !exists;
+    $('manual-note').hidden = exists;
+  })();
+
   // ---- 免許証を描画 ----
   const canvas = document.createElement('canvas');
   canvas.setAttribute('role', 'img');
