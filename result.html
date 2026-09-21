@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>あなたのラブタイプ恋愛免許証</title>
+<meta name="description" content="「ラブタイプ診断 恋の教科書」購入者限定特典。あなただけのラブタイプ恋愛免許証が発行されました。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ラブタイプ恋愛免許証">
+<meta property="og:description" content="名前とラブタイプを入れるだけ。あなただけの恋愛免許証を発行してSNSでシェアしよう。">
+<meta property="og:image" content="assets/img/sample-license.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="hero__badge">交付完了</span>
+    <h1 class="hero__title" id="headline">免許証が発行されました</h1>
+    <p class="hero__lead" id="subline">画像を保存して、SNSでシェアしよう！</p>
+  </header>
+
+  <div class="result-image" id="result-image">
+    <div class="loading" id="loading">免許証を発行中…</div>
+  </div>
+  <p class="save-hint" id="save-hint" hidden>
+    スマホは画像を長押し、PCは右クリックでも保存できます。
+  </p>
+  <p class="notice" id="pending-note" hidden>
+    このタイプの免許証デザインは現在制作中です。<br>
+    完成しだい、この画面の画像が自動で差し替わります。
+  </p>
+
+  <section class="panel">
+    <h2 class="panel__title">シェアする</h2>
+
+    <div class="stack">
+      <button type="button" class="btn btn--primary" id="share-image" hidden>
+        画像つきでシェア 📤
+      </button>
+      <a class="btn btn--primary" id="download" download="love-license.png" href="#">
+        画像を保存する ⬇️
+      </a>
+    </div>
+
+    <div class="share-grid">
+      <a class="share-btn share-btn--x" id="share-x" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L5.9 22H2.8l7.5-8.6L2.4 2h6.6l4.5 6.6L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z"/></svg>
+        Xでシェア
+      </a>
+      <a class="share-btn share-btn--line" id="share-line" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 5.6 2 10.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6h0c1.5-1.6 2.2-3.3 2.2-5C22 5.6 17.5 2 12 2ZM8 12.6H6c-.2 0-.4-.2-.4-.4V8.4c0-.2.2-.4.4-.4s.4.2.4.4v3.4H8c.2 0 .4.2.4.4s-.2.4-.4.4Zm1.6-.4c0 .2-.2.4-.4.4s-.4-.2-.4-.4V8.4c0-.2.2-.4.4-.4s.4.2.4.4v3.8Zm4.6 0c0 .2-.1.3-.3.4h-.1c-.1 0-.3-.1-.3-.2l-1.9-2.6v2.4c0 .2-.2.4-.4.4s-.4-.2-.4-.4V8.4c0-.2.1-.3.3-.4h.1c.1 0 .2.1.3.2l1.9 2.6V8.4c0-.2.2-.4.4-.4s.4.2.4.4v3.8Zm3.1-2.3c.2 0 .4.2.4.4s-.2.4-.4.4h-1.4v.9h1.4c.2 0 .4.2.4.4s-.2.4-.4.4h-1.8c-.2 0-.4-.2-.4-.4V8.4c0-.2.2-.4.4-.4h1.8c.2 0 .4.2.4.4s-.2.4-.4.4h-1.4v.9h1.4Z"/></svg>
+        LINEで送る
+      </a>
+      <a class="share-btn share-btn--facebook" id="share-fb" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+        Facebook
+      </a>
+    </div>
+
+    <p class="caption-box" id="caption"></p>
+    <button type="button" class="btn btn--ghost" id="copy-caption" style="margin-top:10px">
+      投稿文をコピー 📋
+    </button>
+  </section>
+
+  <section class="panel">
+    <a class="btn btn--ghost" href="index.html">別のタイプで作り直す 🔁</a>
+  </section>
+
+  <p class="footer">© ラブキャラ庁 ／ ラブタイプ診断 恋の教科書</p>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/types.js"></script>
+<script src="assets/js/license.js"></script>
+<script src="assets/js/result.js"></script>
+</body>
+</html>

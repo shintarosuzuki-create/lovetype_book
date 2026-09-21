@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラブタイプ恋愛免許証 | 書籍購入者限定 特典お渡し所</title>
+<meta name="description" content="「ラブタイプ診断 恋の教科書」購入者限定特典。名前とラブタイプを入れるだけで、あなただけの「ラブタイプ恋愛免許証」が発行できます。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ラブタイプ恋愛免許証 | 書籍購入者限定 特典お渡し所">
+<meta property="og:description" content="名前とラブタイプを入れるだけ。あなただけの恋愛免許証を発行してSNSでシェアしよう。">
+<meta property="og:image" content="assets/img/sample-license.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="hero__badge">ラブタイプ書籍購入者限定！特典お渡し所</span>
+    <h1 class="hero__title">
+      <span class="marker">恋愛強者</span>のあなたに<br>これを授けます
+    </h1>
+    <p class="hero__logo">Love License</p>
+    <p class="hero__lead">
+      お名前とラブタイプを入れるだけ。<br>
+      あなただけの「ラブタイプ恋愛免許証」を発行します。
+    </p>
+  </header>
+
+  <section class="preview">
+    <img src="assets/img/sample-license.png" alt="ラブタイプ恋愛免許証の見本画像" width="1080" height="1920">
+    <p class="preview__caption">＼こんな免許証が発行されます／</p>
+  </section>
+
+  <section class="panel">
+    <h2 class="panel__title">免許証を発行する</h2>
+
+    <form id="license-form" novalidate>
+      <div class="field">
+        <label for="name">氏名<span class="field__hint">免許証に印字されます（最大12文字）</span></label>
+        <input type="text" id="name" name="name" maxlength="12" placeholder="ラブ 太郎" autocomplete="name" required>
+      </div>
+
+      <div class="field">
+        <label for="type">あなたのラブタイプ</label>
+        <select id="type" name="type" required>
+          <option value="" disabled selected>16タイプから選んでください</option>
+        </select>
+        <p class="type-note" id="type-note"></p>
+      </div>
+
+      <div class="field">
+        <label for="date">交付日<span class="field__hint">未入力なら今日の日付</span></label>
+        <input type="date" id="date" name="date">
+      </div>
+
+      <button type="submit" class="btn btn--primary" id="submit">
+        免許証を発行する 💌
+      </button>
+    </form>
+  </section>
+
+  <p class="footer">© ラブキャラ庁 ／ ラブタイプ診断 恋の教科書</p>
+</div>
+
+<script src="assets/js/types.js"></script>
+<script src="assets/js/form.js"></script>
+</body>
+</html>
