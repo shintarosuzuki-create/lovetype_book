@@ -19,14 +19,6 @@
     container.innerHTML = `<p class="error">${message}</p>`;
   }
 
-  /** ?date=YYYY-MM-DD をローカル日付として解釈する（UTCずれを避ける）。 */
-  function parseDate(value) {
-    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || '');
-    if (!m) return new Date();
-    const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
-    return Number.isNaN(d.getTime()) ? new Date() : d;
-  }
-
   // 合言葉を通していない場合は、結果ページに直接来ても中身を出さない
   if (!Gate.isUnlocked()) {
     loading.remove();
@@ -38,7 +30,7 @@
   const params = new URLSearchParams(location.search);
   const name = (params.get('name') || '').trim().slice(0, 12);
   const code = (params.get('type') || '').toUpperCase();
-  const date = parseDate(params.get('date'));
+  const date = new Date(); // 交付日は常に発行した当日
 
   if (!name || !LOVE_TYPE_MAP[code]) {
     loading.remove();

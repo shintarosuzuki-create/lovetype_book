@@ -3,7 +3,6 @@
   const form = document.getElementById('license-form');
   const nameInput = document.getElementById('name');
   const typeSelect = document.getElementById('type');
-  const dateInput = document.getElementById('date');
   const note = document.getElementById('type-note');
 
   // 16タイプをセレクトに流し込む
@@ -18,11 +17,6 @@
     const t = LOVE_TYPE_MAP[typeSelect.value];
     note.textContent = t ? `💗 ${t.catch}` : '';
   });
-
-  // 交付日の初期値を今日にする
-  const today = new Date();
-  const pad = (n) => String(n).padStart(2, '0');
-  dateInput.value = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -41,8 +35,8 @@
       return;
     }
 
+    // 交付日は発行した当日を使うので、URLには載せない
     const params = new URLSearchParams({ name, type: typeSelect.value });
-    if (dateInput.value) params.set('date', dateInput.value);
     location.href = `result.html?${params.toString()}`;
   });
 

@@ -57,6 +57,24 @@ body {
   border-radius: 999px;
 }
 
+.hero__message {
+  margin: 20px auto 0;
+  max-width: 460px;
+  font-size: clamp(15px, 4vw, 19px);
+  font-weight: 800;
+  line-height: 1.8;
+}
+
+/* 1文ずつブロックにして、折り返しを均等に分ける（末尾1文字だけ落ちるのを防ぐ） */
+.hero__message span {
+  display: block;
+  text-wrap: balance;
+}
+
+.hero__message span + span {
+  margin-top: 10px;
+}
+
 .hero__title {
   margin: 18px 0 6px;
   font-size: clamp(24px, 6.4vw, 34px);
