@@ -22,7 +22,7 @@
   // 合言葉を通していない場合は、結果ページに直接来ても中身を出さない
   if (!Gate.isUnlocked()) {
     loading.remove();
-    fail('このページは書籍購入者限定です。<br><a href="index.html">入力ページ</a>で合言葉を入力してください。');
+    fail('このページは合言葉を入力した方限定です。<br><a href="index.html">入力ページ</a>から合言葉を入力してください。');
     document.querySelectorAll('.panel').forEach((el) => { el.hidden = true; });
     return;
   }

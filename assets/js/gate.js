@@ -1,7 +1,7 @@
 /**
  * 合言葉ゲート（画面側での簡易判定）
  *
- * 書籍に記載した合言葉を入力すると、特典ページのロックが外れる。
+ * 公式LINEで配布した合言葉を入力すると、特典ページのロックが外れる。
  *
  * ■ 合言葉の変え方
  *   下の PASSCODE_SHA256 を、新しい合言葉の SHA-256 ハッシュに差し替える。
@@ -98,7 +98,7 @@ const Gate = (() => {
         open();
         content.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
-        error.textContent = '合言葉が違うようです。書籍に記載のものをご確認ください。';
+        error.textContent = '合言葉が違うようです。公式LINEで受け取ったものをご確認ください。';
         input.select();
       }
     });
