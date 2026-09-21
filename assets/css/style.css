@@ -126,7 +126,8 @@ body {
   align-items: center;
   gap: 9px;
   margin: 0 0 16px;
-  font-size: 18px;
+  /* 長い見出しでも狭い画面で1行に収める（途中で不自然に折り返さないため） */
+  font-size: clamp(14px, 4.3vw, 18px);
   font-weight: 800;
 }
 
