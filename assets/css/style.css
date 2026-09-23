@@ -1,10 +1,11 @@
 /*
- * Zen Maru Gothic : 画面まわりの書体
- * M PLUS Rounded 1c : 免許証に書き込む氏名・交付日（assets/js/license.js）で使う。
- *   Canvas 描画でも Web フォントの読み込みが必要なため、ここで一緒に読み込んでおく。
+ * M PLUS Rounded 1c : 本文・見出しの書体。免許証アートワークと同じ Rounded M+。
+ *   アートワークの文字は「中太（Medium = 500）」なので、目立つ文字は 500 に揃えている。
+ *   免許証に書き込む氏名・交付日（assets/js/license.js）でも使う。
+ *   Canvas 描画でも Web フォントの読み込みが必要なため、ここで読み込んでおく。
  * Baloo 2 : 欧文ロゴ（Love License）
  */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap');
 
 :root {
   --pink: #f4749e;
@@ -35,7 +36,7 @@ html {
 body {
   margin: 0;
   padding: 0 16px 72px;
-  font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
+  font-family: 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
   color: var(--ink);
   background:
     radial-gradient(circle at 12% 6%, rgba(255, 255, 255, 0.9), transparent 42%),
@@ -61,7 +62,7 @@ body {
   display: inline-block;
   background: var(--pink);
   color: var(--white);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.04em;
   padding: 7px 20px;
@@ -72,7 +73,7 @@ body {
   margin: 20px auto 0;
   max-width: 460px;
   font-size: clamp(15px, 4vw, 19px);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.8;
 }
 
@@ -89,7 +90,7 @@ body {
 .hero__title {
   margin: 18px 0 6px;
   font-size: clamp(24px, 6.4vw, 34px);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.45;
 }
 
@@ -99,7 +100,7 @@ body {
 }
 
 .hero__logo {
-  font-family: 'Baloo 2', 'Zen Maru Gothic', sans-serif;
+  font-family: 'Baloo 2', 'M PLUS Rounded 1c', sans-serif;
   font-size: clamp(44px, 13vw, 68px);
   font-weight: 800;
   color: var(--pink);
@@ -134,7 +135,7 @@ body {
   margin: 0 0 16px;
   /* 長い見出しでも狭い画面で1行に収める（途中で不自然に折り返さないため） */
   font-size: clamp(14px, 4.3vw, 18px);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .panel__title::before {
@@ -156,7 +157,7 @@ body {
 .gate__error {
   margin: -8px 0 14px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   color: #c0392b;
   min-height: 1.75em;
 }
@@ -192,7 +193,7 @@ body {
 
 .field > label {
   display: block;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 15px;
   margin-bottom: 8px;
 }
@@ -240,7 +241,7 @@ select:focus {
   gap: 8px;
   width: 100%;
   font: inherit;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 17px;
   padding: 16px;
   border: none;
@@ -300,7 +301,7 @@ select:focus {
   gap: 10px;
   padding: 80px 0;
   color: var(--muted);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .loading::before {
@@ -347,7 +348,7 @@ select:focus {
   margin: 0;
   text-align: center;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--muted);
 }
 
@@ -358,7 +359,7 @@ select:focus {
   border-radius: 12px;
   padding: 13px 16px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   color: #8a6d1f;
   text-align: center;
 }
@@ -381,7 +382,7 @@ select:focus {
   border: none;
   font: inherit;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--white);
   text-decoration: none;
   cursor: pointer;
@@ -411,7 +412,7 @@ select:focus {
   background: rgba(47, 43, 44, 0.94);
   color: var(--white);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   padding: 11px 22px;
   border-radius: 999px;
   opacity: 0;
@@ -431,7 +432,7 @@ select:focus {
   border-radius: 12px;
   padding: 16px;
   color: #c0392b;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .footer {
