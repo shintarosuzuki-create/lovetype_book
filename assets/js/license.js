@@ -48,8 +48,8 @@ const PALETTE = {
   white: '#ffffff',
 };
 
-const JP = '"M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif';
-const EN = '"Baloo 2", "M PLUS Rounded 1c", sans-serif';
+const JP = '"Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif';
+const EN = '"Baloo 2", "Zen Maru Gothic", sans-serif';
 
 const font = (weight, size, family = JP) => `${weight} ${size}px ${family}`;
 
@@ -118,9 +118,9 @@ function loadLicenseArtwork(code) {
 async function ensureFonts(sample) {
   if (!document.fonts) return;
   const jobs = [
+    document.fonts.load(font(400, 24), sample),
     document.fonts.load(font(500, 24), sample),
     document.fonts.load(font(700, 24), sample),
-    document.fonts.load(font(800, 24), sample),
     document.fonts.load(font(800, 150, EN), 'Love License'),
   ];
   await Promise.all(jobs.map((p) => p.catch(() => null)));
@@ -173,7 +173,7 @@ function fillBox(ctx, box, text, scale) {
 
   ctx.fillStyle = PALETTE.ink;
   ctx.textBaseline = 'middle';
-  fitText(ctx, text, x + w / 2, y + h / 2 + scale, w - 28 * scale, box.size * scale, 800, JP, 'center');
+  fitText(ctx, text, x + w / 2, y + h / 2 + scale, w - 28 * scale, box.size * scale, 700, JP, 'center');
   ctx.textBaseline = 'alphabetic';
 }
 
@@ -237,7 +237,7 @@ function drawPlaceholder(ctx, type, data) {
   ctx.textAlign = 'left';
 
   ctx.fillStyle = PALETTE.pink;
-  fitText(ctx, '＼ラブタイプ恋愛免許証／', BASE_W / 2, 430, 600, 46, 800, JP, 'center');
+  fitText(ctx, '＼ラブタイプ恋愛免許証／', BASE_W / 2, 430, 600, 46, 700, JP, 'center');
 
   // 白いカード
   const X = 68;
@@ -274,7 +274,7 @@ function drawPlaceholder(ctx, type, data) {
     ctx.fillStyle = PALETTE.pinkDeep;
     fitText(ctx, label, rx, ry + rh / 2 - 6, 220, 28, 800);
     ctx.fillStyle = PALETTE.ink;
-    fitText(ctx, value, rx + rw, ry + rh / 2 - 6, rw - 250, 34, 800, JP, 'right');
+    fitText(ctx, value, rx + rw, ry + rh / 2 - 6, rw - 250, 34, 700, JP, 'right');
   });
 
   // 準備中の注意書き
@@ -283,7 +283,7 @@ function drawPlaceholder(ctx, type, data) {
   roundRect(ctx, rx, ny, rw, 92, 14);
   ctx.fill();
   ctx.fillStyle = '#8a6d1f';
-  fitText(ctx, 'このタイプの免許証デザインは準備中です', rx + rw / 2, ny + 34, rw - 40, 30, 800, JP, 'center');
+  fitText(ctx, 'このタイプの免許証デザインは準備中です', rx + rw / 2, ny + 34, rw - 40, 30, 700, JP, 'center');
   fitText(ctx, '完成しだい、この画像に差し替わります', rx + rw / 2, ny + 68, rw - 40, 24, 500, JP, 'center');
 
   ctx.fillStyle = PALETTE.pinkDeep;

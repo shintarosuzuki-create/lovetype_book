@@ -148,10 +148,14 @@ python3 -m http.server 8000
 | タイプ名・キャッチコピーを直す | `assets/js/types.js` |
 | シェア文・ハッシュタグを変える | `assets/js/result.js` の `HASHTAGS` と `caption` |
 | 配色を変える | `assets/css/style.css` の `:root` |
+| フォントを変える | `assets/css/style.css` の `@import` と `body`、`assets/js/license.js` の `JP` / `EN` |
 
 ## 注意点
 
-- 画像生成は Canvas で行うため、**フォント（Google Fonts）の読み込み完了を待ってから描画**しています。
+- 書体は免許証アートワークの雰囲気に合わせて **Zen Maru Gothic**（Google Fonts）を使っています。
+  アートワーク側の元書体とは別物なので、完全一致ではありません。
+  元書体の名前が分かっていて Web利用が許諾されている場合は、上の表の箇所を差し替えてください。
+- 画像生成は Canvas で行うため、**フォントの読み込み完了を待ってから描画**しています。
   オフラインだと端末標準のゴシック体にフォールバックします。
 - OGP 画像は静的な見本画像を指しています。
   ユーザーごとの免許証を OGP に出すにはサーバーサイドでの画像生成が必要です。
