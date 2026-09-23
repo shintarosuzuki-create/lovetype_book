@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');
+/*
+ * Zen Maru Gothic : 画面まわりの書体
+ * M PLUS Rounded 1c : 免許証に書き込む氏名・交付日（assets/js/license.js）で使う。
+ *   Canvas 描画でも Web フォントの読み込みが必要なため、ここで一緒に読み込んでおく。
+ * Baloo 2 : 欧文ロゴ（Love License）
+ */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');
 
 :root {
   --pink: #f4749e;
