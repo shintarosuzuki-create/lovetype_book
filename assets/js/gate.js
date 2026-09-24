@@ -14,8 +14,8 @@
  *   厳密な会員制にしたい場合は、サーバー側の認証（Basic認証など）が必要。
  */
 const Gate = (() => {
-  /** 合言葉の SHA-256。初期値は "lovetype" ← 公開前に必ず差し替えること */
-  const PASSCODE_SHA256 = '7b8c20274a5383dba0668a4113b97088a109cf46b86e9dd7ef1b80002cb3cfba';
+  /** 合言葉の SHA-256（平文はここには置かない） */
+  const PASSCODE_SHA256 = '5781eca80ee166a0ff8c1fc112f61b281de5d2ec624ff75af52ff300a6e37d08';
 
   const STORAGE_KEY = 'lovetype-license-unlocked';
 
