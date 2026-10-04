@@ -1,0 +1,22 @@
+# Apache 系のレンタルサーバー向けの設定。
+# nginx など Apache 以外では無視されるので、置いたままで問題ありません。
+
+# WebP を正しい Content-Type で返す（古いサーバーだと未設定のことがある）
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+# 画像・PDF・CSS・JS をブラウザにキャッシュさせる
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png        "access plus 7 days"
+  ExpiresByType image/webp       "access plus 7 days"
+  ExpiresByType application/pdf  "access plus 7 days"
+  ExpiresByType text/css         "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+</IfModule>
+
+# 運営用ツールは公開しない（アップロードしない運用だが、念のため）
+<FilesMatch "^passcode\.html$">
+  Require all denied
+</FilesMatch>
