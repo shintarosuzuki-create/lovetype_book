@@ -73,6 +73,27 @@ body {
   height: auto;
 }
 
+/*
+ * ヒーローより下の背景。カンプから切り出した装飾（ハート・キラキラ・淡い円）を
+ * そのまま敷く。カードが乗る範囲は、はみ出しても目立たないよう均してある。
+ */
+.below {
+  /* 背景画像が終わったあとも同じ色が続くように（画像の最下行の色） */
+  background-color: #fffafc;
+  background-image: image-set(url('../img/below-bg.webp') type('image/webp'),
+                              url('../img/below-bg.png') type('image/png'));
+  background-image: -webkit-image-set(url('../img/below-bg.webp') type('image/webp'),
+                                      url('../img/below-bg.png') type('image/png'));
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+}
+
+/* カンプではヒーローとカードの間にすき間がある */
+.below > .card:first-of-type {
+  margin-top: 5.3%;
+}
+
 /* ---------- カード ---------- */
 
 .card {
@@ -135,11 +156,18 @@ body {
   font-weight: 800;
   line-height: 1.35;
   color: var(--pink-title);
+  /*
+   * リボンは見出しの背後を通る。カンプと同じく、白フチで完全に隠れるよう
+   * ぼかしを重ねがけして濃い白ハロを作る（重ねるほど不透明になる）。
+   */
   text-shadow:
-    2px 2px 0 var(--white), -2px 2px 0 var(--white),
-    2px -2px 0 var(--white), -2px -2px 0 var(--white),
-    2px 0 0 var(--white), -2px 0 0 var(--white),
-    0 2px 0 var(--white), 0 -2px 0 var(--white);
+    0 0 7px var(--white), 0 0 7px var(--white),
+    0 0 7px var(--white), 0 0 7px var(--white),
+    0 0 4px var(--white), 0 0 4px var(--white),
+    3px 3px 0 var(--white), -3px 3px 0 var(--white),
+    3px -3px 0 var(--white), -3px -3px 0 var(--white),
+    3px 0 0 var(--white), -3px 0 0 var(--white),
+    0 3px 0 var(--white), 0 -3px 0 var(--white);
 }
 
 .card__lead {
