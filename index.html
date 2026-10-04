@@ -17,17 +17,16 @@
 <div class="wrap">
 
   <header class="hero">
-    <p class="hero__message">
-      <span>「ラブタイプ診断　恋の教科書」のご予約、ありがとうございます！</span>
-      <span>限定の特典をプレゼントします♡</span>
-    </p>
+    <picture>
+      <source srcset="assets/img/hero.webp" type="image/webp">
+      <img src="assets/img/hero.png" width="780" height="890"
+           alt="9/1から予約受付スタート。累計1億回再生された「ラブタイプ診断」ついに書籍化。ラブタイプ診断 恋の教科書 ー 傾向と対策♡16タイプ別 ー 発売元 集英社">
+    </picture>
   </header>
 
-  <section class="panel gate" id="gate" hidden>
-    <h2 class="panel__title">合言葉を入力してください</h2>
-    <p class="gate__lead">
-      公式LINEで受け取った合言葉を入力すると、プレゼントがもらえます
-    </p>
+  <section class="card" id="gate" hidden>
+    <h1 class="card__title">合言葉を入力してください</h1>
+    <p class="card__lead">公式LINEで受け取った合言葉を入力すると、プレゼントがもらえます</p>
     <form id="gate-form" novalidate>
       <div class="field">
         <label for="passcode">合言葉</label>
@@ -35,35 +34,35 @@
                autocapitalize="off" spellcheck="false" placeholder="公式LINEで受け取った合言葉">
       </div>
       <p class="gate__error" id="gate-error" role="alert"></p>
-      <button type="submit" class="btn btn--primary">ロックを解除する 🔓</button>
+      <button type="submit" class="btn">ロックを解除する 🔓</button>
     </form>
   </section>
 
   <div id="gated-content" hidden>
+    <section class="card card--ribbon">
+      <h1 class="card__title">ご予約ありがとうございます！</h1>
+      <p class="card__lead">限定特典をプレゼントします♡</p>
 
-  <section class="panel">
-    <form id="license-form" novalidate>
-      <div class="field">
-        <label for="name">あなたのお名前<span class="field__hint">（最大12文字）</span></label>
-        <input type="text" id="name" name="name" maxlength="12" placeholder="ラブ教授" autocomplete="name" required>
-      </div>
+      <form id="license-form" novalidate>
+        <div class="field">
+          <label for="name">お名前<span class="field__hint">（最大12文字）</span></label>
+          <input type="text" id="name" name="name" maxlength="12" placeholder="ラブ教授" autocomplete="name" required>
+        </div>
 
-      <div class="field">
-        <label for="type">あなたのラブタイプ</label>
-        <select id="type" name="type" required>
-          <option value="" disabled selected>16タイプから選んでください</option>
-        </select>
-      </div>
+        <div class="field">
+          <label for="type">あなたのラブタイプ</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>選んでください</option>
+          </select>
+          <p class="field__note">※16タイプから選んでください</p>
+        </div>
 
-      <button type="submit" class="btn btn--primary" id="submit">
-        特典を受け取る 💌
-      </button>
-    </form>
-  </section>
+        <button type="submit" class="btn" id="submit">特典を受け取る <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg></button>
+      </form>
+    </section>
+  </div>
 
-  </div><!-- /#gated-content -->
-
-  <p class="footer">© 2026 Love Type / 株式会社ラブキャラ</p>
+  <p class="footer">©2026 Love Type / 株式会社ラブキャラ</p>
 </div>
 
 <script src="assets/js/gate.js"></script>

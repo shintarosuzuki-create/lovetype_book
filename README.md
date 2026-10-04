@@ -106,6 +106,8 @@ assets/
   licenses/README.md        差し替え手順
   manuals/<CODE>.pdf        タイプごとの取扱説明書PDF
   manuals/README.md         ファイル名の対応表
+  img/hero.webp             入力ページ上部のビジュアル（通常はこちらが使われる）
+  img/hero.png              同上のフォールバック（WebP非対応ブラウザ用）
   img/sample-license.png    OGP用の見本画像
 ```
 
@@ -148,7 +150,21 @@ python3 -m http.server 8000
 | タイプ名・キャッチコピーを直す | `assets/js/types.js` |
 | シェア文・ハッシュタグを変える | `assets/js/result.js` の `HASHTAGS` と `caption` |
 | 配色を変える | `assets/css/style.css` の `:root` |
+| 上部のビジュアルを差し替える | `assets/img/hero.webp` と `assets/img/hero.png` を同じ比率で置き換える |
 | フォントを変える | `assets/css/style.css` の `@import` と `body`、`assets/js/license.js` の `JP` / `EN` |
+
+## 入力ページのビジュアルについて
+
+上部のビジュアル（バッジ・リボン・タイトルロゴ・書籍イラスト）は
+デザインカンプから切り出した1枚の画像です（`assets/img/hero.*`、780 × 890）。
+カスタムのレタリングとイラストのため、CSSでは再現せず画像にしています。
+
+**解像度**：元データが横780pxのため、高精細な端末では約1.5倍に引き伸ばされます。
+よりくっきり見せたい場合は、同じ縦横比（780 : 890）で1.5〜2倍の
+書き出しに差し替えてください。コードの変更は不要です。
+
+フォームのカード（白い枠・リボン・入力欄・ボタン）はHTML/CSSで組んでいるので、
+文字はどの解像度でも鮮明で、文言の変更も自由にできます。
 
 ## 注意点
 

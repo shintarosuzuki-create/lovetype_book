@@ -23,7 +23,7 @@
   if (!Gate.isUnlocked()) {
     loading.remove();
     fail('このページは合言葉を入力した方限定です。<br><a href="index.html">入力ページ</a>から合言葉を入力してください。');
-    document.querySelectorAll('.panel').forEach((el) => { el.hidden = true; });
+    document.querySelectorAll('.card').forEach((el) => { el.hidden = true; });
     return;
   }
 
