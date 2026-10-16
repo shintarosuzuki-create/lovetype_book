@@ -1,0 +1,5 @@
+# Netlify を GitHub と連携して公開する場合の設定。
+# イベント招待ページだけを dist-event/ にまとめて公開する（特典サイトは公開しない）。
+[build]
+  command = "sh tools/build-netlify-event.sh"
+  publish = "dist-event"
