@@ -26,7 +26,7 @@
   // ファイルがまだ無い項目は「準備中」の枠が表示される。
   var GALLERY = [
     { type: 'image', src: 'assets/event/special-guide.jpg', caption: '特別なご案内' },
-    { type: 'video', src: 'assets/event/cafe-pr.mp4', poster: '', caption: 'ラブタイプ診断コラボカフェPR動画' }
+    { type: 'video', src: 'assets/event/cafe-pr.mp4', poster: 'assets/event/cafe-pr-poster.jpg', caption: 'ラブタイプ診断コラボカフェPR動画' }
   ];
 
   /* ================= 申し込みリンク ================= */

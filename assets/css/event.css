@@ -284,6 +284,10 @@ main {
 }
 
 .gallery__item--video .gallery__thumb {
+  /* PR動画は縦長（9:16）なので、縦長の枠で中央に置く */
+  aspect-ratio: 9 / 16;
+  max-width: 300px;
+  margin: 0 auto;
   cursor: pointer;
 }
 
