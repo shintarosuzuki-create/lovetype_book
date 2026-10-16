@@ -340,6 +340,11 @@ main {
   margin: 20px auto 0;
 }
 
+.top-apply {
+  margin-top: 16px;
+  text-align: center;
+}
+
 .countdown {
   padding: 14px 12px 12px;
   text-align: center;
