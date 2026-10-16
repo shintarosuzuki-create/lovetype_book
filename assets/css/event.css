@@ -1,0 +1,569 @@
+/*
+ * イベント招待ページ（event.html）専用のスタイル。
+ * スマホ表示を基本に組み、768px 以上で「見出し｜中身」の2カラムにする。
+ */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap');
+
+:root {
+  --bg: #fdeef3;
+  --card: #fff;
+  --line: #f0d5de;
+  --pink: #ea4c89;
+  --pink-deep: #d63a77;
+  --pink-pale: #fde3ec;
+  --ink: #2f2b2c;
+  --muted: #7d7376;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------- キービジュアル ---------- */
+
+.visual {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.visual img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- 見出し共通 ---------- */
+
+.section {
+  padding: 28px 0 8px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.eyebrow::after,
+.heading::after,
+.card__title::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 2px;
+  margin-top: 6px;
+  background: var(--ink);
+}
+
+.heading {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.heading--lg {
+  font-size: 28px;
+}
+
+/* ---------- ABOUT ---------- */
+
+.title {
+  margin: 16px 0 20px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.title__main {
+  display: block;
+  font-size: clamp(18px, 5.6vw, 32px);
+  font-weight: 800;
+}
+
+.title__sub {
+  display: block;
+  margin-top: 6px;
+  font-size: clamp(16px, 4.6vw, 22px);
+  font-weight: 500;
+}
+
+.lead p {
+  margin: 0 0 12px;
+}
+
+.card {
+  margin-top: 16px;
+  padding: 18px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.card__title {
+  margin: 0 0 14px;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.icon-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icon-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.icon-list li:last-child {
+  margin-bottom: 0;
+}
+
+.icon-list__icon {
+  flex: 0 0 1.6em;
+  text-align: center;
+}
+
+.icon-list__note {
+  padding-left: calc(1.6em + 10px);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.icon-list--center {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* ---------- OVERVIEW ---------- */
+
+.overview {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.row {
+  margin-bottom: 28px;
+}
+
+.info {
+  margin: 0;
+  padding: 4px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.info__row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.info__row:last-child {
+  border-bottom: 0;
+}
+
+.info dt {
+  margin-bottom: 4px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.info dt span {
+  margin-right: 6px;
+}
+
+.info dd {
+  margin: 0;
+}
+
+.info__note {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.info__gap {
+  display: block;
+  margin-top: 12px;
+}
+
+/* 地図 */
+.map {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map__link {
+  margin: 6px 0 0;
+  text-align: right;
+  font-size: 13px;
+}
+
+.map__link a {
+  color: var(--muted);
+}
+
+/* ギャラリー：スマホは2列、動画は横幅いっぱい */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery__item--image {
+  grid-column: span 2;
+}
+
+.gallery__item--video {
+  grid-column: span 3;
+}
+
+.gallery__thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  cursor: zoom-in;
+}
+
+.gallery__item--video .gallery__thumb {
+  aspect-ratio: 3 / 2;
+  cursor: pointer;
+}
+
+.gallery__thumb:disabled {
+  cursor: default;
+}
+
+.gallery__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  color: var(--muted);
+  background: repeating-linear-gradient(45deg, #fff, #fff 10px, #fbf3f6 10px, #fbf3f6 20px);
+}
+
+.gallery__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 50%;
+  background: rgba(47, 43, 44, 0.65);
+}
+
+.gallery__play::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.gallery__caption {
+  margin: 4px 0 0;
+  font-size: 12px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* カウントダウン */
+.countdown {
+  padding: 14px 12px 12px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.countdown__label {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.countdown__digits {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  max-width: 84px;
+}
+
+.countdown__num {
+  display: block;
+  width: 100%;
+  padding: 6px 0;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  color: var(--pink-deep);
+  background: var(--pink-pale);
+  border-radius: 8px;
+}
+
+.countdown__cap {
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.countdown__sep {
+  padding-top: 6px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.countdown.is-over .countdown__num {
+  color: var(--muted);
+  background: #f2eef0;
+}
+
+/* ---------- お申し込み ---------- */
+
+.apply {
+  margin: 8px 0 0;
+  padding: 28px 16px 32px;
+  text-align: center;
+  background: var(--card);
+  border-radius: var(--radius);
+}
+
+.apply__title {
+  margin: 0 0 16px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.apply__btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  padding: 15px 24px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  background: var(--pink);
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(234, 76, 137, 0.3);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.apply__btn:hover {
+  background: var(--pink-deep);
+}
+
+.apply__btn:active {
+  transform: translateY(1px);
+}
+
+.apply__closed {
+  margin: 0;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* ---------- フッター ---------- */
+
+.footer {
+  padding: 32px 16px calc(32px + env(safe-area-inset-bottom));
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- 拡大表示 ---------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 12px 24px;
+  background: rgba(20, 16, 18, 0.92);
+}
+
+.lightbox__stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.lightbox__stage img,
+.lightbox__stage video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.lightbox__caption {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #fff;
+}
+
+.lightbox__close,
+.lightbox__nav {
+  position: absolute;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 28px;
+  line-height: 44px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.lightbox__close {
+  top: 10px;
+  right: 10px;
+}
+
+.lightbox__nav {
+  top: 50%;
+  margin-top: -22px;
+}
+
+.lightbox__nav--prev {
+  left: 8px;
+}
+
+.lightbox__nav--next {
+  right: 8px;
+}
+
+/* ---------- PC・タブレット：ワイヤーフレームの2カラム ---------- */
+
+@media (min-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .visual {
+    padding-top: 16px;
+  }
+
+  .card {
+    padding: 20px 24px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 24px;
+  }
+
+  .info__row {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 12px;
+  }
+
+  .info dt {
+    margin-bottom: 0;
+  }
+
+  .gallery {
+    gap: 14px 12px;
+  }
+
+  .countdown__num {
+    font-size: 30px;
+  }
+}
