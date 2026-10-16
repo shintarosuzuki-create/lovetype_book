@@ -11,7 +11,7 @@
 <meta property="og:description" content="渋谷109にて「縁結び神社」をテーマにした期間限定ポップアップイベント。限定200枠のスペシャル招待企画です。">
 <meta property="og:image" content="assets/event/poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/event.css?v=20261016">
+<link rel="stylesheet" href="assets/css/event.css?v=20261016-2">
 </head>
 <body>
 
@@ -21,6 +21,22 @@
 </header>
 
 <main>
+
+  <!-- ========== カウントダウン ========== -->
+  <section class="top-countdown">
+    <div class="countdown" id="countdown">
+      <p class="countdown__label">お申し込み締め切りまで 残り時間</p>
+      <div class="countdown__digits" role="timer" aria-live="off">
+        <div class="countdown__unit"><span class="countdown__num" data-unit="d">00</span><span class="countdown__cap">日</span></div>
+        <span class="countdown__sep" aria-hidden="true">:</span>
+        <div class="countdown__unit"><span class="countdown__num" data-unit="h">00</span><span class="countdown__cap">時間</span></div>
+        <span class="countdown__sep" aria-hidden="true">:</span>
+        <div class="countdown__unit"><span class="countdown__num" data-unit="m">00</span><span class="countdown__cap">分</span></div>
+        <span class="countdown__sep" aria-hidden="true">:</span>
+        <div class="countdown__unit"><span class="countdown__num" data-unit="s">00</span><span class="countdown__cap">秒</span></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ========== ABOUT ========== -->
   <section class="section about">
@@ -113,26 +129,6 @@
         <ul class="gallery" id="gallery"></ul>
       </div>
     </div>
-
-    <div class="row">
-      <div class="row__label">
-        <h2 class="heading">カウントダウン</h2>
-      </div>
-      <div class="row__body">
-        <div class="countdown" id="countdown">
-          <p class="countdown__label">お申し込み締め切りまで 残り時間</p>
-          <div class="countdown__digits" role="timer" aria-live="off">
-            <div class="countdown__unit"><span class="countdown__num" data-unit="d">00</span><span class="countdown__cap">日</span></div>
-            <span class="countdown__sep" aria-hidden="true">:</span>
-            <div class="countdown__unit"><span class="countdown__num" data-unit="h">00</span><span class="countdown__cap">時間</span></div>
-            <span class="countdown__sep" aria-hidden="true">:</span>
-            <div class="countdown__unit"><span class="countdown__num" data-unit="m">00</span><span class="countdown__cap">分</span></div>
-            <span class="countdown__sep" aria-hidden="true">:</span>
-            <div class="countdown__unit"><span class="countdown__num" data-unit="s">00</span><span class="countdown__cap">秒</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ========== お申し込み ========== -->
@@ -154,6 +150,6 @@
   <button type="button" class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="次へ">›</button>
 </div>
 
-<script src="assets/js/event.js?v=20261016"></script>
+<script src="assets/js/event.js?v=20261016-2"></script>
 </body>
 </html>

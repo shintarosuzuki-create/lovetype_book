@@ -334,7 +334,12 @@ main {
   border-color: transparent transparent transparent #fff;
 }
 
-/* カウントダウン */
+/* カウントダウン（トップ画像のすぐ下） */
+.top-countdown {
+  max-width: 480px;
+  margin: 20px auto 0;
+}
+
 .countdown {
   padding: 14px 12px 12px;
   text-align: center;
