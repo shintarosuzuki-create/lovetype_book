@@ -330,13 +330,6 @@ main {
   border-color: transparent transparent transparent #fff;
 }
 
-.gallery__caption {
-  margin: 4px 0 0;
-  font-size: 12px;
-  text-align: center;
-  color: var(--muted);
-}
-
 /* カウントダウン */
 .countdown {
   padding: 14px 12px 12px;
@@ -482,12 +475,6 @@ main {
   max-height: 100%;
   object-fit: contain;
   border-radius: 6px;
-}
-
-.lightbox__caption {
-  margin: 10px 0 0;
-  font-size: 13px;
-  color: #fff;
 }
 
 .lightbox__close,

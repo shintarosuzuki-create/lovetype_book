@@ -22,7 +22,7 @@
   //   type   : 'image' か 'video'
   //   src    : ファイルの場所
   //   poster : 動画のサムネイル画像（省略可。省略時は動画の先頭コマ）
-  //   caption: 下に出る説明
+  //   caption: 画面には出さない。読み上げ・代替テキスト用の名前
   // ファイルがまだ無い項目は「準備中」の枠が表示される。
   var GALLERY = [
     { type: 'image', src: 'assets/event/special-guide.jpg', caption: '特別なご案内' },
@@ -141,12 +141,7 @@
     btn.insertBefore(media, btn.firstChild);
     btn.addEventListener('click', function () { openLightbox(i); });
 
-    var cap = document.createElement('p');
-    cap.className = 'gallery__caption';
-    cap.textContent = item.caption;
-
     li.appendChild(btn);
-    li.appendChild(cap);
     galleryEl.appendChild(li);
   });
 
@@ -154,7 +149,6 @@
 
   var lightbox = document.getElementById('lightbox');
   var stage = document.getElementById('lightbox-stage');
-  var caption = document.getElementById('lightbox-caption');
   var current = 0;
   var lastFocus = null;
 
@@ -186,7 +180,6 @@
       el.alt = item.caption;
     }
     stage.appendChild(el);
-    caption.textContent = item.caption;
   }
 
   function step(dir) {
