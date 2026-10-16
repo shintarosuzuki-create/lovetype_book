@@ -96,7 +96,7 @@ Netlify / Vercel のパスワード保護や Cloudflare Access などへの移�
 
 ### 画像・動画の差し替え
 
-- トップ画像：`assets/event/poster.png` を上書き（いまは仮の画像なので、元データに差し替えてください）
+- トップ画像：`assets/event/poster.jpg` を上書き
 - ギャラリー：`assets/event/special-guide.jpg`（特別なご案内）と `cafe-pr.mp4`（コラボカフェPR動画）を置くだけで表示されます。
   まだ置いていない枠には「準備中」が表示されます。枚数やファイル名を変えるときは `GALLERY` を編集してください。
   動画のサムネイルを指定したいときは `poster` に画像のパスを書きます。

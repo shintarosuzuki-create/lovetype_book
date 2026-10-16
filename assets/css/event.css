@@ -265,19 +265,16 @@ main {
   list-style: none;
 }
 
-.gallery__item--image {
-  grid-column: span 3;
-}
-
+.gallery__item--image,
 .gallery__item--video {
-  grid-column: span 3;
+  grid-column: 1 / -1;
 }
 
 .gallery__thumb {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   padding: 0;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -467,7 +464,7 @@ main {
   align-items: center;
   justify-content: center;
   padding: 56px 12px 24px;
-  background: rgba(20, 16, 18, 0.92);
+  background: rgba(20, 16, 18, 0.97);
 }
 
 .lightbox__stage {
