@@ -94,6 +94,16 @@ Netlify / Vercel のパスワード保護や Cloudflare Access などへの移�
 | `STORAGE_KEY` | 締め切り時刻の保存名。末尾の番号を変えると全員のタイマーが最初からになる |
 | `GALLERY` | ギャラリーに並べる画像・動画の一覧 |
 
+### Netlify で公開する
+
+イベントページだけを Netlify で公開できます（特典サイトは含めません）。
+`event.html` は `index.html` として置くので、URL はサイトのトップ（`https://○○.netlify.app/`）になります。
+
+- 手作業で公開：`sh tools/build-netlify-event.sh` を実行してできた `dist-event/` フォルダを、
+  https://app.netlify.com/drop にドラッグ＆ドロップ
+- GitHub と連携して公開：Netlify で「Import from Git」からこのリポジトリを選ぶ。
+  設定は `netlify.toml` に書いてあるので、そのまま公開できる
+
 ### 更新が反映されないとき
 
 ブラウザが古い CSS / JS を使い続けないよう、`event.html` で読み込む
