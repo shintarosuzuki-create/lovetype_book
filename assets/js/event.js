@@ -31,9 +31,11 @@
 
   /* ================= 申し込みリンク ================= */
 
-  var applyLink = document.getElementById('apply-link');
-  var applyClosed = document.getElementById('apply-closed');
-  applyLink.href = RESERVE_URL;
+  // ボタンはタイマーの下とページ下部の2か所にある
+  var applyLinks = document.querySelectorAll('.js-apply-link');
+  var applyClosed = document.querySelectorAll('.js-apply-closed');
+  var closed = false;
+  Array.prototype.forEach.call(applyLinks, function (a) { a.href = RESERVE_URL; });
 
   /* ================= カウントダウン ================= */
 
@@ -79,8 +81,9 @@
     nums.s.textContent = pad(left % 60);
 
     if (left === 0) {
-      applyLink.hidden = true;
-      applyClosed.hidden = false;
+      closed = true;
+      Array.prototype.forEach.call(applyLinks, function (a) { a.hidden = true; });
+      Array.prototype.forEach.call(applyClosed, function (p) { p.hidden = false; });
       document.getElementById('countdown').classList.add('is-over');
       if (timerId) clearInterval(timerId);
     }
@@ -88,7 +91,7 @@
 
   render();
   // 毎回「締め切り − 現在時刻」で計算するので、タブを裏に回してもずれない
-  if (applyClosed.hidden) timerId = setInterval(render, 1000);
+  if (!closed) timerId = setInterval(render, 1000);
 
   /* ================= ギャラリー ================= */
 
