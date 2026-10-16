@@ -10,7 +10,7 @@
   /* ================= 設定（ここだけ書き換えればOK） ================= */
 
   // 予約ツールの URL
-  var RESERVE_URL = '#';
+  var RESERVE_URL = 'https://timerex.net/m/lovechara.popup/6960fc6c';
 
   // 初回アクセスから何時間で締め切るか
   var TIMER_HOURS = 48;
