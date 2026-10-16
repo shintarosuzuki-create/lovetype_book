@@ -94,6 +94,12 @@ Netlify / Vercel のパスワード保護や Cloudflare Access などへの移�
 | `STORAGE_KEY` | 締め切り時刻の保存名。末尾の番号を変えると全員のタイマーが最初からになる |
 | `GALLERY` | ギャラリーに並べる画像・動画の一覧 |
 
+### 更新が反映されないとき
+
+ブラウザが古い CSS / JS を使い続けないよう、`event.html` で読み込む
+`event.css?v=…`・`event.js?v=…` に版番号を付けています。
+`event.css` か `event.js` を書き換えたら、`event.html` のこの番号（日付など）も一緒に変えてください。
+
 ### 画像・動画の差し替え
 
 - トップ画像：`assets/event/poster.jpg` を上書き
