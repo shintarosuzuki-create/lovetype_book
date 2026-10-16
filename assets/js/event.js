@@ -25,11 +25,8 @@
   //   caption: 下に出る説明
   // ファイルがまだ無い項目は「準備中」の枠が表示される。
   var GALLERY = [
-    { type: 'image', src: 'assets/event/gallery-1.jpg', caption: '画像1' },
-    { type: 'image', src: 'assets/event/gallery-2.jpg', caption: '画像2' },
-    { type: 'image', src: 'assets/event/gallery-3.jpg', caption: '画像3' },
-    { type: 'video', src: 'assets/event/movie-1.mp4', poster: '', caption: '動画1' },
-    { type: 'video', src: 'assets/event/movie-2.mp4', poster: '', caption: '動画2' }
+    { type: 'image', src: 'assets/event/special-guide.jpg', caption: '特別なご案内' },
+    { type: 'video', src: 'assets/event/cafe-pr.mp4', poster: '', caption: 'ラブタイプ診断コラボカフェPR動画' }
   ];
 
   /* ================= 申し込みリンク ================= */

@@ -266,7 +266,7 @@ main {
 }
 
 .gallery__item--image {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .gallery__item--video {
@@ -277,7 +277,7 @@ main {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   padding: 0;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -287,7 +287,6 @@ main {
 }
 
 .gallery__item--video .gallery__thumb {
-  aspect-ratio: 3 / 2;
   cursor: pointer;
 }
 
