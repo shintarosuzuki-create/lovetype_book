@@ -129,12 +129,29 @@ Netlify / Vercel のパスワード保護や Cloudflare Access などへの移�
 ## 一般向けLP（popup.html）
 
 ラブタイプ神社 POPUP STORE とコラボカフェを紹介する、一般のお客さま向けのページです。
-構成は「概要・商品・体験イベント・コラボカフェ・アクセス」。
+構成は「概要・会場でできること（体験）・商品・コラボカフェ・アクセス」。
 スタイルは `assets/css/popup.css`、画像は `assets/popup/` にあります。
 
-- `assets/popup/` の画像（venue / goods / ema / photo / gacha / cafe）は、案内画像から切り出した**仮の画像**です。
+- 商品の画像は `assets/popup/goods/` に次の名前で置くと表示されます（無いものは「画像準備中」）。
+  正方形に収まるよう縦横比はそのまま縮小します。
+
+  | ファイル名 | 商品 |
+  | --- | --- |
+  | `prize-s.jpg` | ガチャ S賞 抱き枕 |
+  | `prize-a.jpg` | ガチャ A賞 ダイカットクッション |
+  | `prize-b.jpg` | ガチャ B賞 お守りアクキー |
+  | `prize-c.jpg` | ガチャ C賞 缶バッジ2個セット |
+  | `prize-d.jpg` | ガチャ D賞 ステッカー3枚セット |
+  | `ema.jpg` | 絵馬 |
+  | `omikuji.jpg` | おみくじ |
+  | `mirror.jpg` | コンパクトミラー |
+  | `clearfile.jpg` | クリアファイル |
+  | `kinchaku.jpg` | ミニ巾着 |
+  | `order.jpg` | ぬいぐるみ・Tシャツ（受注生産） |
+
+- `assets/popup/` 直下の画像（venue / ema / photo / gacha / cafe）は、案内画像から切り出した**仮の画像**です。
   元データがあれば同じファイル名で上書きしてください（解像度が上がります）
-- 価格・ラインナップ・カフェのメニューは「近日公開予定」としています。決まったら `popup.html` に追記してください
+- カフェのメニュー・価格は「近日公開予定」としています。決まったら `popup.html` に追記してください
 - Netlify で公開する場合は `sh tools/build-netlify-popup.sh` でできる `dist-popup/` をアップロードします
 
 ## 検索エンジン対策

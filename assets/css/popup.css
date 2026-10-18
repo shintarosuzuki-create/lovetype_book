@@ -337,6 +337,137 @@ main {
   font-size: 40px;
 }
 
+/* 商品 */
+.subheading {
+  margin: 28px 0 12px;
+  padding-left: 10px;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.4;
+  border-left: 5px solid var(--pink);
+}
+
+.subheading:first-of-type {
+  margin-top: 0;
+}
+
+.gacha-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 10px;
+  background: var(--pink-pale);
+  border-radius: 12px;
+}
+
+.gacha-price__label,
+.gacha-price__value {
+  margin: 0;
+  font-weight: 800;
+}
+
+.gacha-price__value {
+  font-size: 26px;
+  color: var(--pink-deep);
+}
+
+.gacha-price__value small {
+  font-size: 13px;
+}
+
+.goods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.goods__item {
+  padding: 8px 8px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.goods__img {
+  aspect-ratio: 1 / 1;
+  margin-bottom: 8px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.goods__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 画像がまだ無いときの枠 */
+.goods__img.is-missing {
+  display: grid;
+  place-items: center;
+  background: repeating-linear-gradient(45deg, #fff, #fff 10px, #fdf1f5 10px, #fdf1f5 20px);
+}
+
+.goods__img.is-missing::after {
+  content: '画像準備中';
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.goods__rank {
+  display: inline-block;
+  margin: 0 0 2px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 999px;
+  background: var(--muted);
+}
+
+.goods__rank--s { background: #e8a92e; }
+.goods__rank--a { background: var(--pink); }
+.goods__rank--b { background: var(--lavender); }
+.goods__rank--c { background: #4fb3d9; }
+.goods__rank--d { background: #6cc19a; }
+
+.goods__name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.goods__name span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.goods__price {
+  margin: 2px 0 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--pink-deep);
+}
+
+.goods__price--small {
+  font-size: 15px;
+}
+
+.goods__desc {
+  margin: 2px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
 /* コラボカフェ */
 .cafe__date {
   margin: -8px 0 16px;
@@ -420,6 +551,11 @@ main {
 
   .exp {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .goods {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
 
   .text,
