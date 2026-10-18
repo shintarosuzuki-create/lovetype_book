@@ -202,6 +202,11 @@ main {
   color: var(--muted);
 }
 
+.note--center {
+  margin: -8px 0 20px;
+  text-align: center;
+}
+
 .figure {
   margin: 0 0 18px;
   overflow: hidden;
