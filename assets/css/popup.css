@@ -89,67 +89,15 @@ video {
   width: 100%;
 }
 
-.hero__body {
-  padding: 20px 16px 8px;
-  text-align: center;
-}
 
-.hero__lead {
-  margin: 0 0 16px;
-  font-size: clamp(19px, 5.4vw, 26px);
-  font-weight: 800;
-  line-height: 1.5;
-}
 
-.periods {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
 
-.period {
-  padding: 10px 6px;
-  background: var(--card);
-  border: 2px solid var(--pink);
-  border-radius: 12px;
-}
 
-.period--cafe {
-  border-color: var(--lavender);
-}
 
-.period__label {
-  margin: 0;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--pink-deep);
-}
 
-.period--cafe .period__label {
-  color: var(--lavender);
-}
 
-.period__date {
-  margin: 0;
-  font-size: clamp(16px, 4.6vw, 20px);
-  font-weight: 800;
-  line-height: 1.4;
-}
 
-.period__days {
-  margin: 0;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-}
 
-.hero__place {
-  margin: 12px 0 0;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--muted);
-}
 
 /* ---------- セクション共通 ---------- */
 
