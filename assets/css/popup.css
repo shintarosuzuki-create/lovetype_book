@@ -300,6 +300,10 @@ main {
   line-height: 1.4;
 }
 
+.exp__title-icon {
+  margin-right: 6px;
+}
+
 .exp__text {
   margin: 0;
 }
