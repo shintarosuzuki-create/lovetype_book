@@ -244,7 +244,38 @@ main {
 
 .exp__item--contain > img {
   object-fit: contain;
-  background: var(--pink-pale);
+  background: #fff;
+}
+
+/* 映え写真：横スクロールで複数枚 */
+.shots {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 10px 0;
+  overflow-x: auto;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.shots li {
+  flex: 0 0 82%;
+  scroll-snap-align: center;
+}
+
+.shots img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.shots__hint {
+  margin: 4px 0 0;
+  font-size: 12px;
+  text-align: center;
+  color: var(--muted);
 }
 
 .exp__item--tall > img {
@@ -537,6 +568,18 @@ main {
 
   .exp {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .exp__item--wide {
+    grid-column: 1 / -1;
+  }
+
+  .shots li {
+    flex-basis: calc((100% - 16px) / 3);
+  }
+
+  .shots__hint {
+    display: none;
   }
 
   .goods {
