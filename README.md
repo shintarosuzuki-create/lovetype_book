@@ -152,7 +152,7 @@ Netlify / Vercel のパスワード保護や Cloudflare Access などへの移�
 
 - `assets/popup/cafe.jpg` はドライブの「メニューイメージ.png」、`ura.jpg` は柱ラッピング（裏の顔）のイラストです
 - 「映え写真」の写真は `assets/popup/photo/` にあり、`popup.html` の `<ul class="shots">` に `<li>` を足せば何枚でも並べられます（スマホは横スワイプ、PCは3枚ずつ表示）
-- `assets/popup/gacha.jpg` は案内画像から切り出した**仮の画像**です。
+- `assets/popup/gacha.jpg` はデジタルガチャの3D画像（縦長の元画像から正方形に切り抜き）です。
   元データがあれば同じファイル名で上書きしてください（解像度が上がります）
 - カフェのメニュー・価格は「近日公開予定」としています。決まったら `popup.html` に追記してください
 - Netlify で公開する場合は `sh tools/build-netlify-popup.sh` でできる `dist-popup/` をアップロードします

@@ -278,6 +278,10 @@ main {
   color: var(--muted);
 }
 
+.exp__item--square > img {
+  aspect-ratio: 1 / 1;
+}
+
 .exp__item--tall > img {
   object-position: center 40%;
 }
