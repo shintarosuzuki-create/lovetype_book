@@ -5,9 +5,10 @@ set -e
 cd "$(dirname "$0")/.."
 OUT=dist-popup
 rm -rf "$OUT"
-mkdir -p "$OUT/assets/css" "$OUT/assets/event"
+mkdir -p "$OUT/assets/css" "$OUT/assets/js" "$OUT/assets/event"
 cp popup.html "$OUT/index.html"
 cp assets/css/popup.css "$OUT/assets/css/"
+cp assets/js/popup.js "$OUT/assets/js/"
 cp -r assets/popup "$OUT/assets/"
 cp assets/event/poster.jpg assets/event/cafe-pr.mp4 assets/event/cafe-pr-poster.jpg "$OUT/assets/event/"
 echo "built: $OUT"
