@@ -147,9 +147,11 @@ Netlify / Vercel のパスワード保護や Cloudflare Access などへの移�
   | `mirror.jpg` | コンパクトミラー |
   | `clearfile.jpg` | クリアファイル |
   | `kinchaku.jpg` | ミニ巾着 |
-  | `order.jpg` | ぬいぐるみ・Tシャツ（受注生産） |
+  | `plush.jpg` | ぬいぐるみ（受注生産） |
+  | `tshirt.jpg` | Tシャツ（受注生産） |
 
-- `assets/popup/` 直下の画像（venue / ema / photo / gacha / cafe）は、案内画像から切り出した**仮の画像**です。
+- `assets/popup/cafe.jpg` はドライブの「メニューイメージ.png」、`ura.jpg` は柱ラッピング（裏の顔）のイラストです
+- `assets/popup/` 直下のその他の画像（venue / ema / photo / gacha）は、案内画像から切り出した**仮の画像**です。
   元データがあれば同じファイル名で上書きしてください（解像度が上がります）
 - カフェのメニュー・価格は「近日公開予定」としています。決まったら `popup.html` に追記してください
 - Netlify で公開する場合は `sh tools/build-netlify-popup.sh` でできる `dist-popup/` をアップロードします

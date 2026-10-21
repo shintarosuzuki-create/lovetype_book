@@ -242,6 +242,11 @@ main {
   object-fit: cover;
 }
 
+.exp__item--contain > img {
+  object-fit: contain;
+  background: var(--pink-pale);
+}
+
 .exp__item--tall > img {
   object-position: center 40%;
 }
