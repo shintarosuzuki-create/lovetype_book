@@ -19,9 +19,13 @@
 <meta property="og:description" content="SHIBUYA109渋谷店8Fに期間限定オープン。POPUP STORE 10.30〜11.03／コラボカフェ 10.23〜11.02">
 <meta property="og:image" content="assets/event/poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/popup.css?v=20261022">
+<link rel="stylesheet" href="assets/css/popup.css?v=20261022-2">
 </head>
-<body>
+<!--
+  価格の表示スイッチ：body の class="hide-prices" を消すと、ガチャ・物販の価格がすべて表示されます。
+  （価格の要素には class="price" が付いています。中身は消さずに残してあります）
+-->
+<body class="hide-prices">
 
 <!-- ========== ナビ ========== -->
 <nav class="nav" aria-label="ページ内メニュー">
@@ -166,7 +170,7 @@
     <p class="note note--center">※商品画像はイメージです。実際の商品とは異なる場合があります。</p>
 
     <h3 class="subheading">デジタルガチャ</h3>
-    <div class="gacha-price">
+    <div class="gacha-price price">
       <p class="gacha-price__label">1回</p>
       <p class="gacha-price__value">¥1,100<small>（税込）</small></p>
     </div>
@@ -205,27 +209,27 @@
       <li class="goods__item">
         <div class="goods__img"><img src="assets/popup/goods/ema.jpg" alt="絵馬" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
         <h4 class="goods__name">絵馬<span>（全16種）</span></h4>
-        <p class="goods__price">900円<small>（税込）</small></p>
+        <p class="goods__price price">900円<small>（税込）</small></p>
       </li>
       <li class="goods__item">
         <div class="goods__img"><img src="assets/popup/goods/omikuji.jpg" alt="おみくじ" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
         <h4 class="goods__name">おみくじ<span>（全16種）</span></h4>
-        <p class="goods__price">300円<small>（税込）</small></p>
+        <p class="goods__price price">300円<small>（税込）</small></p>
       </li>
       <li class="goods__item">
         <div class="goods__img"><img src="assets/popup/goods/mirror.jpg" alt="コンパクトミラー" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
         <h4 class="goods__name">コンパクトミラー<span>（全16種）</span></h4>
-        <p class="goods__price">1,200円<small>（税込）</small></p>
+        <p class="goods__price price">1,200円<small>（税込）</small></p>
       </li>
       <li class="goods__item">
         <div class="goods__img"><img src="assets/popup/goods/clearfile.jpg" alt="クリアファイル" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
         <h4 class="goods__name">クリアファイル</h4>
-        <p class="goods__price">500円<small>（税込）</small></p>
+        <p class="goods__price price">500円<small>（税込）</small></p>
       </li>
       <li class="goods__item">
         <div class="goods__img"><img src="assets/popup/goods/kinchaku.jpg" alt="ミニ巾着" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
         <h4 class="goods__name">ミニ巾着</h4>
-        <p class="goods__price">1,200円<small>（税込）</small></p>
+        <p class="goods__price price">1,200円<small>（税込）</small></p>
       </li>
       <li class="goods__item">
         <div class="goods__img"><img src="assets/popup/goods/plush.jpg" alt="ぬいぐるみ" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
