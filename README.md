@@ -132,6 +132,7 @@ Netlify / Vercel のパスワード保護や Cloudflare Access などへの移�
 構成は「概要・会場でできること（体験）・商品・コラボカフェ・アクセス」。
 スタイルは `assets/css/popup.css`、画像は `assets/popup/` にあります。
 上部メニューは見ているセクションのボタンがピンクになります（`assets/js/popup.js`）。
+Google アナリティクス（GA4、測定ID `G-WTL0T099LB`）のタグを `popup.html` の `<head>` 直後に入れています。
 
 - 商品の画像は `assets/popup/goods/` に次の名前で置くと表示されます（無いものは「画像準備中」）。
   正方形に収まるよう縦横比はそのまま縮小します。
