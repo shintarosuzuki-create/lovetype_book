@@ -575,7 +575,7 @@ main {
   }
 
   .shots li {
-    flex-basis: calc((100% - 16px) / 3);
+    flex-basis: calc((100% - 24px) / 4);
   }
 
   .shots__hint {
