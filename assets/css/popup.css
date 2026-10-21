@@ -421,6 +421,12 @@ main {
 
 /* 商品 */
 
+/* 価格の非表示スイッチ（popup.html の body に hide-prices があるとき価格を隠す） */
+.hide-prices .price {
+  display: none !important;
+}
+
+
 .subheading {
   margin: 28px 0 12px;
   padding-left: 10px;
