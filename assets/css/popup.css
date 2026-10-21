@@ -540,6 +540,11 @@ main {
   color: var(--pink-deep);
 }
 
+.goods__price small {
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .goods__price--small {
   font-size: 15px;
 }
