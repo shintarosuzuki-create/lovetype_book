@@ -157,6 +157,7 @@ Google アナリティクス（GA4、測定ID `G-WTL0T099LB`）のタグを `pop
 - `assets/popup/gacha.jpg` はデジタルガチャの3D画像（縦長の元画像から正方形に切り抜き）です。
   元データがあれば同じファイル名で上書きしてください（解像度が上がります）
 - **商品の価格はいま非表示です。** `popup.html` の `<body class="hide-prices">` から `class="hide-prices"` を消すと、ガチャ（¥1,100）と物販の価格（税込）がすべて表示されます
+- **ぬいぐるみの枠はいま非表示です。** `popup.html` の「ぬいぐるみ」の `<li class="goods__item" hidden>` から `hidden` を消すと表示されます
 - カフェのメニュー・価格は「近日公開予定」としています。決まったら `popup.html` に追記してください
 - Netlify で公開する場合は `sh tools/build-netlify-popup.sh` でできる `dist-popup/` をアップロードします
 
