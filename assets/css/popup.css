@@ -354,33 +354,6 @@ main {
 }
 
 /* 商品 */
-.blessing {
-  margin: 0 0 18px;
-  padding: 18px 16px;
-  text-align: center;
-  background: #fff7ea;
-  border: 2px solid #f3c6a5;
-  border-radius: var(--radius);
-}
-
-.blessing__lead {
-  margin: 0 0 4px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--muted);
-}
-
-.blessing__main {
-  margin: 0;
-  font-size: clamp(18px, 5.2vw, 24px);
-  font-weight: 800;
-  line-height: 1.5;
-}
-
-.blessing__main strong {
-  font-size: 1.15em;
-  color: #d9466f;
-}
 
 .subheading {
   margin: 28px 0 12px;
