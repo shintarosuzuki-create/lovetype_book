@@ -96,6 +96,12 @@
   /* ================= ギャラリー ================= */
 
   var galleryEl = document.getElementById('gallery');
+  var lightbox = document.getElementById('lightbox');
+
+  // ギャラリー／拡大表示の要素が無いページ（例：event.html の差し替え後）では
+  // 以降のギャラリー・ライトボックス処理をまるごと飛ばす。
+  // これより上のカウントダウン・申し込みリンクは既に動作している。
+  if (!galleryEl || !lightbox) return;
 
   function placeholder(item) {
     var div = document.createElement('div');
@@ -150,7 +156,6 @@
 
   /* ================= 拡大表示 ================= */
 
-  var lightbox = document.getElementById('lightbox');
   var stage = document.getElementById('lightbox-stage');
   var current = 0;
   var lastFocus = null;
