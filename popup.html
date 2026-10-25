@@ -40,7 +40,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <meta property="og:description" content="SHIBUYA109渋谷店8Fに期間限定オープン。POPUP STORE 10.30〜11.03／コラボカフェ 10.23〜11.02">
 <meta property="og:image" content="assets/event/poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/popup.css?v=20261022-2">
+<link rel="stylesheet" href="assets/css/popup.css?v=20261025">
 </head>
 <!--
   価格の表示スイッチ：body の class="hide-prices" を消すと、ガチャ・物販の価格がすべて表示されます。
@@ -144,7 +144,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         </div>
       </li>
       <li class="exp__item exp__item--square">
-        <img src="assets/popup/gacha.jpg" alt="神社型のデジタルガチャとラブタイプのキャラクターたち" width="900" height="900" loading="lazy">
+        <video class="exp__media" autoplay loop muted playsinline preload="metadata" poster="assets/popup/gacha.jpg" width="900" height="900" aria-label="神社型のデジタルガチャの特別演出">
+          <source src="assets/popup/gacha.mp4" type="video/mp4">
+        </video>
         <div class="exp__body">
           <h3 class="exp__title"><span class="exp__title-icon" aria-hidden="true">🎰</span>デジタルガチャで、キャラクターの特別演出を楽しもう</h3>
           <p class="exp__text">レジで購入したQRコードを読み込むと、大きなモニターでキャラクターの演出が始まります。どの賞が当たるかは、演出の最後までわかりません。</p>
@@ -274,16 +276,30 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <h2 class="heading">ラブタイプ診断コラボカフェ</h2>
     <p class="cafe__date">2026.10.23（金）〜 11.02（月）</p>
     <p class="text">韓国カフェで話題の映えキューブパイとドリンクを、キャラクターのイメージカラーでご提供します。<br>ポップアップストアとあわせて楽しめます。</p>
-    <figure class="figure">
-      <img src="assets/popup/cafe.jpg" alt="ラブタイプ診断コラボカフェ メニューイメージ（忠犬ハチ公・デビル天使・恋愛モンスターのキューブパイとドリンク）" width="900" height="1125" loading="lazy">
-    </figure>
+    <div class="cafe-tabs">
+      <div class="cafe-tabs__nav" role="tablist" aria-label="コラボカフェ">
+        <button class="cafe-tab is-active" id="tab-menu" type="button" role="tab" aria-selected="true" aria-controls="panel-menu">メニュー</button>
+        <button class="cafe-tab" id="tab-gallery" type="button" role="tab" aria-selected="false" aria-controls="panel-gallery">ギャラリー</button>
+      </div>
+      <div class="cafe-panel is-active" id="panel-menu" role="tabpanel" aria-labelledby="tab-menu">
+        <figure class="figure">
+          <img src="assets/popup/cafe.png" alt="ラブタイプ診断コラボカフェ FOOD・DRINKメニュー" width="1563" height="2000" loading="lazy">
+        </figure>
+      </div>
+      <div class="cafe-panel" id="panel-gallery" role="tabpanel" aria-labelledby="tab-gallery" hidden>
+        <ul class="cafe-gallery">
+          <li><img src="assets/popup/cafe/gallery-1.jpg" alt="コラボカフェ店内のキャラクターウォールアート" width="1477" height="1108" loading="lazy"></li>
+          <li><img src="assets/popup/cafe/gallery-2.jpg" alt="コラボカフェのカウンターと看板" width="1086" height="1448" loading="lazy"></li>
+          <li><img src="assets/popup/cafe/gallery-3.jpg" alt="キャラクターのイメージカラーの映えキューブパイ" width="1108" height="1477" loading="lazy"></li>
+        </ul>
+      </div>
+    </div>
     <div class="movie">
       <video controls playsinline preload="none" poster="assets/event/cafe-pr-poster.jpg" width="1080" height="1920">
         <source src="assets/event/cafe-pr.mp4" type="video/mp4">
       </video>
       <p class="movie__cap">コラボカフェ PR動画</p>
     </div>
-    <p class="note">※メニュー・価格の詳細は近日公開予定です。</p>
   </section>
 
   <!-- ========== アクセス ========== -->
@@ -308,6 +324,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <p>© 2026 LoveChara Inc. All Rights Reserved.</p>
 </footer>
 
-<script src="assets/js/popup.js?v=20261021"></script>
+<script src="assets/js/popup.js?v=20261025"></script>
 </body>
 </html>
