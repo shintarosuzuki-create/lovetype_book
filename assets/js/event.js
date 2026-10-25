@@ -24,10 +24,7 @@
   //   poster : 動画のサムネイル画像（省略可。省略時は動画の先頭コマ）
   //   caption: 画面には出さない。読み上げ・代替テキスト用の名前
   // ファイルがまだ無い項目は「準備中」の枠が表示される。
-  var GALLERY = [
-    { type: 'image', src: 'assets/event/special-guide.jpg', caption: '特別なご案内' },
-    { type: 'video', src: 'assets/event/cafe-pr.mp4', poster: 'assets/event/cafe-pr-poster.jpg', caption: 'ラブタイプ診断コラボカフェPR動画' }
-  ];
+  var GALLERY = [];
 
   /* ================= 申し込みリンク ================= */
 
