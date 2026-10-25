@@ -11,7 +11,8 @@
 <meta property="og:description" content="渋谷109にて「縁結び神社」をテーマにした期間限定ポップアップイベント。限定200枠のスペシャル招待企画です。">
 <meta property="og:image" content="assets/event/poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/event.css?v=20261016-3">
+<link rel="stylesheet" href="assets/css/event.css?v=20261025i">
+<link rel="stylesheet" href="assets/css/popup-embed.css?v=20261025i">
 </head>
 <body>
 
@@ -106,33 +107,155 @@
         </dl>
       </div>
     </div>
-
-    <div class="row">
-      <div class="row__label">
-        <h2 class="heading">会場マップ</h2>
-      </div>
-      <div class="row__body">
-        <div class="map">
-          <iframe
-            src="https://www.google.com/maps?q=SHIBUYA109%E6%B8%8B%E8%B0%B7%E5%BA%97&amp;hl=ja&amp;z=16&amp;output=embed"
-            title="SHIBUYA109渋谷店の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        </div>
-        <p class="map__link">
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=SHIBUYA109%E6%B8%8B%E8%B0%B7%E5%BA%97" target="_blank" rel="noopener">Google マップをみる ↗</a>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="row__label">
-        <h2 class="heading">ギャラリー</h2>
-      </div>
-      <div class="row__body">
-        <!-- 中身は assets/js/event.js の GALLERY から作る -->
-        <ul class="gallery" id="gallery"></ul>
-      </div>
-    </div>
   </section>
+
+  <!-- ========== LP移植セクション（体験・物販・カフェ） ========== -->
+  <!-- popup.html から移植。スタイルは assets/css/popup-embed.css で .lp-embed 配下に限定 -->
+  <div class="lp-embed hide-prices">
+
+    <!-- ========== 体験 ========== -->
+    <section class="section" id="experience">
+      <p class="eyebrow">EXPERIENCE</p>
+      <h2 class="heading">会場でできること</h2>
+
+      <ul class="exp">
+        <li class="exp__item exp__item--contain">
+          <img src="assets/popup/ema.webp" alt="恋絵馬のイメージ" width="1200" height="442" loading="lazy">
+          <div class="exp__body">
+            <h3 class="exp__title"><span class="exp__title-icon" aria-hidden="true">🙏</span>恋絵馬に、願いを込めて奉納しよう</h3>
+            <p class="exp__text">自分のタイプの絵馬に恋の願いごとを書いて、会場の絵馬掛けに奉納できます。奉納した絵馬は、会期が終わったあと、縁結びで知られる祐徳稲荷神社へお届け予定です。</p>
+          </div>
+        </li>
+        <li class="exp__item exp__item--contain">
+          <img src="assets/popup/goods/omikuji.webp" alt="おみくじのイメージ" width="800" height="800" loading="lazy">
+          <div class="exp__body">
+            <h3 class="exp__title"><span class="exp__title-icon" aria-hidden="true">📜</span>おみくじで、いまの恋の運勢をチェックしよう</h3>
+            <p class="exp__text">参拝するような気分で、ラブタイプのおみくじを引いてみてください。全16種類あるので、どのキャラクターが出るかもお楽しみに。</p>
+          </div>
+        </li>
+        <li class="exp__item exp__item--square">
+          <video class="exp__media" autoplay loop muted playsinline preload="metadata" poster="assets/popup/gacha.webp" width="900" height="900" aria-label="神社型のデジタルガチャの特別演出">
+            <source src="assets/popup/gacha.mp4" type="video/mp4">
+          </video>
+          <div class="exp__body">
+            <h3 class="exp__title"><span class="exp__title-icon" aria-hidden="true">🎰</span>デジタルガチャで、キャラクターの特別演出を楽しもう</h3>
+            <p class="exp__text">レジで購入したQRコードを読み込むと、大きなモニターでキャラクターの演出が始まります。どの賞が当たるかは、演出の最後までわかりません。</p>
+          </div>
+        </li>
+        <li class="exp__item exp__item--contain">
+          <img src="assets/popup/ura.webp" alt="キャラクターの表と裏の顔を描いたイラスト" width="1000" height="563" loading="lazy">
+          <div class="exp__body">
+            <h3 class="exp__title"><span class="exp__title-icon" aria-hidden="true">🎭</span>ここでしか見られない、キャラクターの「裏の顔」をのぞいてみよう</h3>
+            <p class="exp__text">会場の柱では、16タイプそれぞれの「裏の顔」を紹介しています。本人は隠しているつもりの本音や、ふだんの診断結果ではわからない一面が見られます。自分のタイプも、気になるあの人のタイプも探してみてください。</p>
+          </div>
+        </li>
+        <li class="exp__item exp__item--wide">
+          <!-- 写真は assets/popup/photo/ に置き、<li> を足せば何枚でも並べられる -->
+          <ul class="shots" aria-label="フォトエリアの写真">
+            <li><img src="assets/popup/photo/torii.webp" alt="ハートの鳥居のフォトスポット" width="900" height="900" loading="lazy"></li>
+            <li><img src="assets/popup/photo/booth.webp" alt="顔出し撮影ブースで「Love type 17 YOUR あなた自身」になって撮影するイメージ" width="900" height="900" loading="lazy"></li>
+            <li><img src="assets/popup/photo/hachiko.webp" alt="忠犬ハチ公の着ぐるみ" width="900" height="900" loading="lazy"></li>
+            <li><img src="assets/popup/photo/visitors.webp" alt="フォトエリアで撮影を楽しむ来場者のイメージ" width="900" height="900" loading="lazy"></li>
+          </ul>
+          <p class="shots__hint" aria-hidden="true">← スワイプで写真を見られます →</p>
+          <div class="exp__body">
+            <h3 class="exp__title"><span class="exp__title-icon" aria-hidden="true">📸</span>鳥居をくぐって、フォトエリアで映え写真を撮ろう</h3>
+            <p class="exp__text">鳥居の先には、記念撮影ができるフォトエリアがあります。</p>
+            <ul class="exp__list">
+              <li>ラブタイプの世界観で撮れる撮影用の背景</li>
+              <li>顔出し撮影ブースで、自分が「17タイプ目」になれる</li>
+              <li>忠犬ハチ公の着ぐるみとツーショット</li>
+              <li>ラブタイプ診断から生まれるアプリ・サービスの情報解禁ブース</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========== 商品 ========== -->
+    <!-- 画像は assets/popup/goods/ に置く。ファイルが無いものは「画像準備中」になる -->
+    <section class="section section--tint" id="goods">
+      <p class="eyebrow">GOODS</p>
+      <h2 class="heading">POPUP限定商品</h2>
+      <figure class="figure">
+        <img src="assets/popup/blessing.webp" alt="このPOPUPのグッズは佐賀県 祐徳稲荷神社で縁結びのお清め済み" width="1200" height="800" loading="lazy">
+      </figure>
+
+      <h3 class="subheading">デジタルガチャ</h3>
+      <div class="gacha-price price">
+        <p class="gacha-price__label">1回</p>
+        <p class="gacha-price__value">¥1,100<small>（税込）</small></p>
+      </div>
+      <p class="text">景品は5種類、それぞれ16キャラクターあります。</p>
+      <ul class="goods">
+        <li class="goods__item">
+          <div class="goods__img"><img src="assets/popup/goods/prize-s.webp" alt="S賞 抱き枕" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
+          <p class="goods__rank goods__rank--s">S賞</p>
+          <h4 class="goods__name">抱き枕</h4>
+        </li>
+        <li class="goods__item">
+          <div class="goods__img"><img src="assets/popup/goods/prize-a.webp" alt="A賞 ダイカットクッション" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
+          <p class="goods__rank goods__rank--a">A賞</p>
+          <h4 class="goods__name">ダイカットクッション</h4>
+        </li>
+        <li class="goods__item">
+          <div class="goods__img"><img src="assets/popup/goods/prize-b.webp" alt="B賞 お守りアクキー" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
+          <p class="goods__rank goods__rank--b">B賞</p>
+          <h4 class="goods__name">お守りアクキー</h4>
+        </li>
+        <li class="goods__item">
+          <div class="goods__img"><img src="assets/popup/goods/prize-c.webp" alt="C賞 缶バッジ2個セット" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
+          <p class="goods__rank goods__rank--c">C賞</p>
+          <h4 class="goods__name">缶バッジ2個セット</h4>
+        </li>
+        <li class="goods__item">
+          <div class="goods__img"><img src="assets/popup/goods/prize-d.webp" alt="D賞 ステッカー3枚セット" loading="lazy" onerror="this.parentNode.classList.add('is-missing');this.remove()"></div>
+          <p class="goods__rank goods__rank--d">D賞</p>
+          <h4 class="goods__name">ステッカー3枚セット</h4>
+        </li>
+      </ul>
+      <p class="note">※ステッカー単品の販売はありません。</p>
+
+      <figure class="figure">
+        <img src="assets/popup/goods-lineup.webp?v=20261025h" alt="ラブタイプ神社 グッズラインナップ（絵馬・おみくじ・コンパクトミラー・クリアファイル・巾着・デジタルガチャ 等）" width="865" height="1238" loading="lazy">
+      </figure>
+      <p class="note note--center">※商品画像はイメージです。実際の商品とは異なる場合があります。</p>
+    </section>
+
+    <!-- ========== コラボカフェ ========== -->
+    <section class="section section--cafe" id="cafe">
+      <p class="eyebrow">COLLABO CAFE</p>
+      <h2 class="heading">ラブタイプ診断コラボカフェ</h2>
+      <p class="cafe__date">2026.10.23（金）〜 11.02（月）</p>
+      <p class="text">韓国カフェで話題の映えキューブパイとドリンクを、キャラクターのイメージカラーでご提供します。<br>ポップアップストアとあわせて楽しめます。</p>
+      <p class="text">ドリンクもしくはフードを注文頂いた方に、恋人や友達と楽しめる特別な診断カードをプレゼント！<br>数量限定だからお早めにチェック下さい。</p>
+      <div class="cafe-tabs">
+        <div class="cafe-tabs__nav" role="tablist" aria-label="コラボカフェ">
+          <button class="cafe-tab is-active" id="tab-menu" type="button" role="tab" aria-selected="true" aria-controls="panel-menu">メニュー</button>
+          <button class="cafe-tab" id="tab-gallery" type="button" role="tab" aria-selected="false" aria-controls="panel-gallery">ギャラリー</button>
+        </div>
+        <div class="cafe-panel is-active" id="panel-menu" role="tabpanel" aria-labelledby="tab-menu">
+          <figure class="figure">
+            <img src="assets/popup/cafe.webp" alt="ラブタイプ診断コラボカフェ FOOD・DRINKメニュー" width="1563" height="2000" loading="lazy">
+          </figure>
+        </div>
+        <div class="cafe-panel" id="panel-gallery" role="tabpanel" aria-labelledby="tab-gallery" hidden>
+          <ul class="cafe-gallery">
+            <li><img src="assets/popup/cafe/gallery-1.webp" alt="コラボカフェ店内のキャラクターウォールアート" width="1477" height="1108" loading="lazy"></li>
+            <li><img src="assets/popup/cafe/gallery-2.webp" alt="コラボカフェのカウンターと看板" width="1086" height="1448" loading="lazy"></li>
+            <li><img src="assets/popup/cafe/gallery-3.webp" alt="キャラクターのイメージカラーの映えキューブパイ" width="1108" height="1477" loading="lazy"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="movie">
+        <video controls playsinline preload="none" poster="assets/popup/cafe-movie-poster.webp" width="608" height="1080">
+          <source src="assets/popup/cafe-movie.mp4" type="video/mp4">
+        </video>
+        <p class="movie__cap">コラボカフェ PR動画</p>
+      </div>
+    </section>
+
+  </div>
 
   <!-- ========== お申し込み ========== -->
   <section class="apply" id="apply">
@@ -145,14 +268,7 @@
 
 <footer class="footer">©2026 Love Type / 株式会社ラブキャラ</footer>
 
-<!-- ギャラリーの拡大表示 -->
-<div class="lightbox" id="lightbox" hidden>
-  <button type="button" class="lightbox__close" id="lightbox-close" aria-label="閉じる">×</button>
-  <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="前へ">‹</button>
-  <div class="lightbox__stage" id="lightbox-stage"></div>
-  <button type="button" class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="次へ">›</button>
-</div>
-
-<script src="assets/js/event.js?v=20261016-3"></script>
+<script src="assets/js/event.js?v=20261025i"></script>
+<script src="assets/js/popup-embed.js?v=20261025i" defer></script>
 </body>
 </html>
