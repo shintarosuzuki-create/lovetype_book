@@ -627,22 +627,23 @@ main {
 }
 
 .cafe-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.cafe-gallery li:first-child {
-  grid-column: 1 / -1;
+.cafe-gallery li {
+  margin: 0;
 }
 
 .cafe-gallery img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border-radius: var(--radius);
 }
 
