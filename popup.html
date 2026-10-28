@@ -40,7 +40,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <meta property="og:description" content="SHIBUYA109渋谷店8Fに期間限定オープン。POPUP STORE 10.30〜11.03／コラボカフェ 10.23〜11.02">
 <meta property="og:image" content="assets/event/poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/popup.css?v=20261025h">
+<link rel="stylesheet" href="assets/css/popup.css?v=20261028">
 </head>
 <!--
   価格の表示スイッチ：body の class="hide-prices" を消すと、ガチャ・物販の価格がすべて表示されます。
@@ -162,10 +162,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <li class="exp__item exp__item--wide">
         <!-- 写真は assets/popup/photo/ に置き、<li> を足せば何枚でも並べられる -->
         <ul class="shots" aria-label="フォトエリアの写真">
-          <li><img src="assets/popup/photo/torii.webp" alt="ハートの鳥居のフォトスポット" width="900" height="900" loading="lazy"></li>
+          <li><img src="assets/popup/photo/store.webp" alt="ハートの鳥居があるラブタイプ神社の会場" width="900" height="900" loading="lazy"></li>
           <li><img src="assets/popup/photo/booth.webp" alt="顔出し撮影ブースで「Love type 17 YOUR あなた自身」になって撮影するイメージ" width="900" height="900" loading="lazy"></li>
           <li><img src="assets/popup/photo/hachiko.webp" alt="忠犬ハチ公の着ぐるみ" width="900" height="900" loading="lazy"></li>
-          <li><img src="assets/popup/photo/visitors.webp" alt="フォトエリアで撮影を楽しむ来場者のイメージ" width="900" height="900" loading="lazy"></li>
         </ul>
         <p class="shots__hint" aria-hidden="true">← スワイプで写真を見られます →</p>
         <div class="exp__body">
@@ -196,6 +195,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <p class="gacha-price__label">1回</p>
       <p class="gacha-price__value">¥1,100<small>（税込）</small></p>
     </div>
+    <ul class="gacha-shots" aria-label="デジタルガチャの写真">
+      <li><img src="assets/popup/gacha-wall.webp" alt="ガチャ景品ラインナップとデジタルガチャのモニター" width="900" height="900" loading="lazy"></li>
+    </ul>
     <p class="text">景品は5種類、それぞれ16キャラクターあります。</p>
     <ul class="goods">
       <li class="goods__item">
@@ -226,9 +228,26 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </ul>
     <p class="note">※ステッカー単品の販売はありません。</p>
 
-    <figure class="figure">
-      <img src="assets/popup/goods-lineup.webp?v=20261025h" alt="ラブタイプ神社 グッズラインナップ（絵馬・おみくじ・コンパクトミラー・クリアファイル・巾着・デジタルガチャ 等）" width="865" height="1238" loading="lazy">
-    </figure>
+    <h3 class="subheading">グッズラインナップ</h3>
+    <div class="cafe-tabs">
+      <div class="cafe-tabs__nav" role="tablist" aria-label="グッズラインナップ">
+        <button class="cafe-tab is-active" id="goods-tab-menu" type="button" role="tab" aria-selected="true" aria-controls="goods-panel-menu">メニュー</button>
+        <button class="cafe-tab" id="goods-tab-gallery" type="button" role="tab" aria-selected="false" aria-controls="goods-panel-gallery">ギャラリー</button>
+      </div>
+      <div class="cafe-panel is-active" id="goods-panel-menu" role="tabpanel" aria-labelledby="goods-tab-menu">
+        <figure class="figure">
+          <img src="assets/popup/goods-lineup.webp?v=20261025h" alt="ラブタイプ神社 グッズラインナップ（絵馬・おみくじ・コンパクトミラー・クリアファイル・巾着・デジタルガチャ 等）" width="865" height="1238" loading="lazy">
+        </figure>
+      </div>
+      <div class="cafe-panel" id="goods-panel-gallery" role="tabpanel" aria-labelledby="goods-tab-gallery" hidden>
+        <!-- 写真は assets/popup/goods-gallery/ に置き、<li> を足せば並ぶ -->
+        <ul class="cafe-gallery">
+          <li><img src="assets/popup/goods-gallery/goods-corner.webp" alt="グッズコーナーの看板とコンパクトミラー" width="900" height="900" loading="lazy"></li>
+          <li><img src="assets/popup/goods-gallery/book.webp" alt="書籍「ラブタイプ診断 恋の教科書」" width="900" height="900" loading="lazy"></li>
+          <li><img src="assets/popup/goods-gallery/cushion.webp" alt="キャラクターのダイカットクッション" width="900" height="900" loading="lazy"></li>
+        </ul>
+      </div>
+    </div>
     <p class="note note--center">※商品画像はイメージです。実際の商品とは異なる場合があります。</p>
   </section>
 
@@ -287,6 +306,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <p>© 2026 LoveChara Inc. All Rights Reserved.</p>
 </footer>
 
-<script src="assets/js/popup.js?v=20261025h"></script>
+<script src="assets/js/popup.js?v=20261028"></script>
 </body>
 </html>
